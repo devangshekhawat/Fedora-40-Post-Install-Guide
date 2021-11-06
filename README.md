@@ -16,7 +16,6 @@ Things to do after installing Fedora 35
 * `sudo dnf update -y`
 * `sudo dnf install akmod-nvidia`
 * `sudo dnf install xorg-x11-drv-nvidia-cuda`
-* `sudo dnf install -y xorg-x11-drv-nvidia-cuda-libs`
 * `sudo dnf install xorg-x11-drv-nvidia-power`
 * `sudo dnf install -y vulkan`
 * `sudo systemctl enable nvidia-{suspend,resume,hibernate}`
@@ -26,6 +25,12 @@ Things to do after installing Fedora 35
   `glxinfo|egrep "OpenGL vendor|OpenGL renderer`
    and
    '/sbin/lspci | grep -e 3D'
+
+### System 76 Power
+
+* 'sudo dnf copr enable szydell/system76'
+* 'sudo dnf install system76-driver'
+* 'sudo systemctl enable system76-power system76-power-wake'
 
 ### Set Hostname
 
@@ -59,13 +64,13 @@ Things to do after installing Fedora 35
 ├── markdown-toc@0.4.2
 └── minimap@4.29.9
 
-### Lutris
-* install Lutris
-* 'sudo dnf config-manager --add-repo https://dl.winehq.org/wine-builds/fedora/35/winehq.repo'
-* 'sudo dnf install winehq-stable'
 ### Theming
 
-* \
+* https://github.com/EliverLara/Nordic
+* git clone https://github.com/vinceliuice/Tela-icon-theme
+  cd Tela-icon-theme
+  ./install.sh
+* https://vsthemes.org/uploads/posts/2020-04/1586853771_daniel-leone-v7datklzzaw-unsplash-modded.jpg
 
 ### Gnome Extensions
 
