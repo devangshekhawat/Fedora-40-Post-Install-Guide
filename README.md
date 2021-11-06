@@ -8,10 +8,6 @@ Things to do after installing Fedora 35
 
 * `sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E%fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfreerelease-$(rpm -E %fedora).noarch.rpm`
 
-### Xorg
-
-* sudo nano /etc/gdm/custom.conf
-* uncomment `WayladEnable=false` and add this to \[daemon\] section  `DefaultSession=gnome-xorg.desktop`
 
 ### Nvidia Drivers (must be on latest kernel)
 
@@ -20,7 +16,6 @@ Things to do after installing Fedora 35
 * `sudo dnf install akmod-nvidia`
 * `sudo dnf install xorg-x11-drv-nvidia-cuda`
 * `sudo dnf install -y xorg-x11-drv-nvidia-cuda-libs`
-* `sudo dnf install vdpauinfo libva-vdpau-driver libva-utils`
 * `sudo dnf install xorg-x11-drv-nvidia-power`
 * `sudo dnf install -y vulkan`
 * `sudo systemctl enable nvidia-{suspend,resume,hibernate}`
