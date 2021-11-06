@@ -7,6 +7,7 @@ Things to do after installing Fedora 35
 ### RPM Fusion release
 
 * `sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E%fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfreerelease-$(rpm -E %fedora).noarch.rpm`
+* 'sudo dnf update -y'
 
 
 ### Nvidia Drivers (must be on latest kernel)
@@ -56,6 +57,10 @@ Things to do after installing Fedora 35
 ├── markdown-toc@0.4.2
 └── minimap@4.29.9
 
+### Lutris
+* install Lutris
+* 'sudo dnf config-manager --add-repo https://dl.winehq.org/wine-builds/fedora/35/winehq.repo'
+* 'sudo dnf install winehq-stable'
 ### Theming
 
 * \
