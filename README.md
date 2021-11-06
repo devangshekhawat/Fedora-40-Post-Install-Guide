@@ -24,6 +24,8 @@ Things to do after installing Fedora 35
 * to check which gpu is running-
 
   `glxinfo|egrep "OpenGL vendor|OpenGL renderer`
+   and
+   '/sbin/lspci | grep -e 3D'
 
 ### Set Hostname
 
