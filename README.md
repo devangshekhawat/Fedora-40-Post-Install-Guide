@@ -30,7 +30,13 @@ Things to do after installing Fedora 35
 
 * 'sudo dnf copr enable szydell/system76'
 * 'sudo dnf install system76-driver'
+* 'sudo dnf install system76-power'
 * 'sudo systemctl enable system76-power system76-power-wake'
+* 'git clone https://github.com/pop-os/gnome-shell-extension-system76-power.git'
+* 'cd gnome-shell-extension-system76-power'
+* 'sudo dnf install nodejs-typescript'
+* 'make'
+* 'make install'
 
 ### Set Hostname
 
