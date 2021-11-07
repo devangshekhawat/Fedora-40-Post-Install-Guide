@@ -49,9 +49,9 @@ Things to do after installing Fedora 35
 * `sudo dnf install -y gstreamer1-plugins-{bad-*,good-*,ugly-*,base} gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel ffmpeg gstreamer-ffmpeg `
 * `sudo dnf install -y lame* --exclude=lame-devel `
 * `sudo dnf group upgrade --with-optional Multimedia`
-* `sudo dnf config-manager --set-enabled fedora-cisco-openh264`
 * `sudo dnf install -y gstreamer1-plugin-openh264 mozilla-openh264`
-
+* `sudo dnf config-manager --set-enabled fedora-cisco-openh264`
+* 'sudo dnf install -y gstreamer1-plugin-openh264 mozilla-openh264'
 
 ### Atom
 
@@ -86,5 +86,6 @@ Things to do after installing Fedora 35
 * [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
 * [Gsconnect](https://extensions.gnome.org/extension/1319/gsconnect/)
 * [Bluetooth Quick Connect](https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/)
-
+* [Input Output Device Chooser](https://github.com/mmalafaia/gse-sound-output-device-chooser/tree/patch-1)
+* 
 
