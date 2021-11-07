@@ -51,7 +51,7 @@ Things to do after installing Fedora 35
 * `sudo dnf group upgrade --with-optional Multimedia`
 * `sudo dnf install -y gstreamer1-plugin-openh264 mozilla-openh264`
 * `sudo dnf config-manager --set-enabled fedora-cisco-openh264`
-* 'sudo dnf install -y gstreamer1-plugin-openh264 mozilla-openh264'
+* `sudo dnf install -y gstreamer1-plugin-openh264 mozilla-openh264`
 
 ### Atom
 
@@ -73,9 +73,9 @@ Things to do after installing Fedora 35
 ### Theming
 
 * https://github.com/EliverLara/Nordic
-* git clone https://github.com/vinceliuice/Tela-icon-theme
-  cd Tela-icon-theme
-  ./install.sh
+* `git clone https://github.com/vinceliuice/Tela-icon-theme`
+  `cd Tela-icon-theme`
+  `./install.sh`
 * https://vsthemes.org/uploads/posts/2020-04/1586853771_daniel-leone-v7datklzzaw-unsplash-modded.jpg
 
 ### Gnome Extensions
@@ -87,5 +87,4 @@ Things to do after installing Fedora 35
 * [Gsconnect](https://extensions.gnome.org/extension/1319/gsconnect/)
 * [Bluetooth Quick Connect](https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/)
 * [Input Output Device Chooser](https://github.com/mmalafaia/gse-sound-output-device-chooser/tree/patch-1)
-* 
 
