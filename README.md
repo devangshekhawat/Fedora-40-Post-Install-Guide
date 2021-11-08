@@ -24,7 +24,7 @@ Things to do after installing Fedora 35
 
   `glxinfo|egrep "OpenGL vendor|OpenGL renderer`
    and
-   '/sbin/lspci | grep -e 3D'
+   `/sbin/lspci | grep -e 3D`
 
 ### System 76 Power
 
@@ -52,6 +52,7 @@ Things to do after installing Fedora 35
 * `sudo dnf install -y gstreamer1-plugin-openh264 mozilla-openh264`
 * `sudo dnf config-manager --set-enabled fedora-cisco-openh264`
 * `sudo dnf install -y gstreamer1-plugin-openh264 mozilla-openh264`
+* Firefox Hardware Video Acceleration - https://wiki.archlinux.org/title/Firefox#Hardware_video_acceleration
 
 ### Touchegg
 
