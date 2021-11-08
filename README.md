@@ -7,7 +7,7 @@ Things to do after installing Fedora 35
 ### RPM Fusion release
 
 * `sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E%fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfreerelease-$(rpm -E %fedora).noarch.rpm`
-* 'sudo dnf update -y'
+* `sudo dnf update -y'
 
 
 ### Nvidia Drivers (must be on latest kernel)
@@ -28,15 +28,15 @@ Things to do after installing Fedora 35
 
 ### System 76 Power
 
-* 'sudo dnf copr enable szydell/system76'
-* 'sudo dnf install system76-driver'
-* 'sudo dnf install system76-power'
-* 'sudo systemctl enable system76-power system76-power-wake'
-* 'git clone https://github.com/pop-os/gnome-shell-extension-system76-power.git'
-* 'cd gnome-shell-extension-system76-power'
-* 'sudo dnf install nodejs-typescript'
-* 'make'
-* 'make install'
+* `sudo dnf copr enable szydell/system76'
+* `sudo dnf install system76-driver'
+* `sudo dnf install system76-power'
+* `sudo systemctl enable system76-power system76-power-wake'
+* `git clone https://github.com/pop-os/gnome-shell-extension-system76-power.git'
+* `cd gnome-shell-extension-system76-power'
+* `sudo dnf install nodejs-typescript'
+* `make'
+* `make install'
 
 ### Set Hostname
 
@@ -53,22 +53,31 @@ Things to do after installing Fedora 35
 * `sudo dnf config-manager --set-enabled fedora-cisco-openh264`
 * `sudo dnf install -y gstreamer1-plugin-openh264 mozilla-openh264`
 
+### Touchegg
+
+* `sudo dnf copr enable jose_exposito/touchegg`
+* `sudo dnf install touchegg`
+
+### Flatpak
+
+* `flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo`
+* `flatpak update`
+
 ### Atom
 
 * sudo rpm -Uvh atom.rpm
 * Packages
-
-├── atom-beautify@0.33.4
-├── atom-ide-ui@0.13.0
-├── delete-lines@0.5.0
-├── file-icons@2.1.43
-├── ide-css@0.3.5
-├── ide-html@0.6.2
-├── ide-json@0.2.1
-├── ide-python@1.5.0
-├── markdown-preview-enhanced@0.18.5
-├── markdown-toc@0.4.2
-└── minimap@4.29.9
+- atom-beautify@0.33.4
+- atom-ide-ui@0.13.0
+- delete-lines@0.5.0
+- file-icons@2.1.43
+- ide-css@0.3.5
+- ide-html@0.6.2
+- ide-json@0.2.1
+- ide-python@1.5.0
+- markdown-preview-enhanced@0.18.5
+- markdown-toc@0.4.2
+- minimap@4.29.9
 
 ### Theming
 
