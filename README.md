@@ -54,11 +54,6 @@ Things to do after installing Fedora 35
 * `sudo dnf install -y gstreamer1-plugin-openh264 mozilla-openh264`
 * Hardware Video Acceleration - https://wiki.archlinux.org/title/Hardware_video_acceleration
 
-### Touchegg
-
-* `sudo dnf copr enable jose_exposito/touchegg`
-* `sudo dnf install touchegg`
-
 ### Flatpak
 
 * `flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo`
