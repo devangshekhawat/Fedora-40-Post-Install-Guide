@@ -85,6 +85,8 @@ Things to do after installing Fedora 35
 
 ### Gnome Extensions
 
+* [Extensions Sync](https://extensions.gnome.org/extension/1486/extensions-sync/)
+* [Gesture Improvements](https://extensions.gnome.org/extension/4245/gesture-improvements/)
 * [User Themes](https://extensions.gnome.org/extension/19/user-themes/)
 * [Just Perfection](https://extensions.gnome.org/extension/3843/just-perfection/)
 * [Net Speed Simplified](https://extensions.gnome.org/extension/3724/net-speed-simplified/)
