@@ -26,18 +26,6 @@ Things to do after installing Fedora 35
    and
    `/sbin/lspci | grep -e 3D`
 
-### System 76 Power
-
-* `sudo dnf copr enable szydell/system76'
-* `sudo dnf install system76-driver'
-* `sudo dnf install system76-power'
-* `sudo systemctl enable system76-power system76-power-wake'
-* `git clone https://github.com/pop-os/gnome-shell-extension-system76-power.git'
-* `cd gnome-shell-extension-system76-power'
-* `sudo dnf install nodejs-typescript'
-* `make'
-* `make install'
-
 ### Set Hostname
 
 * `hostnamectl set-hostname fedora`
@@ -52,7 +40,9 @@ Things to do after installing Fedora 35
 * `sudo dnf install -y gstreamer1-plugin-openh264 mozilla-openh264`
 * `sudo dnf config-manager --set-enabled fedora-cisco-openh264`
 * `sudo dnf install -y gstreamer1-plugin-openh264 mozilla-openh264`
+* `sudo dnf install -y ffmpeg-libs`
 * Hardware Video Acceleration - https://wiki.archlinux.org/title/Hardware_video_acceleration
+* https://wiki.archlinux.org/title/firefox#Hardware_video_acceleration
 
 ### Flatpak
 
@@ -94,4 +84,5 @@ Things to do after installing Fedora 35
 * [Gsconnect](https://extensions.gnome.org/extension/1319/gsconnect/)
 * [Bluetooth Quick Connect](https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/)
 * [Input Output Device Chooser](https://github.com/mmalafaia/gse-sound-output-device-chooser/tree/patch-1)
+* [Gnome Shell Extension Indicator](https://extensions.gnome.org/extension/615/appindicator-support/)
 
