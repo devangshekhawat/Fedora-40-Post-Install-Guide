@@ -33,7 +33,9 @@ Things to do after installing Fedora 35
 
 ### Media Codecs
 
-* `sudo dnf group upgrade --with-optional Multimedia`
+* `sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel`
+* `sudo dnf install lame\* --exclude=lame-devel`
+* `sudo dnf group upgrade --with-optional Multimedia` 
 * `sudo dnf config-manager --set-enabled fedora-cisco-openh264`
 * `sudo dnf install -y gstreamer1-plugin-openh264 mozilla-openh264`
 * `sudo dnf install -y ffmpeg-libs`
