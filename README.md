@@ -16,8 +16,8 @@ Things to do after installing Fedora 35
 * `sudo dnf update -y`
 * `sudo dnf install akmod-nvidia`
 * `sudo dnf install xorg-x11-drv-nvidia-cuda`
+* WAIT FOR ATLEASE 5 Mins before REBOOTING
 * `sudo dnf install xorg-x11-drv-nvidia-power`
-* `sudo dnf install -y vulkan`
 * `sudo systemctl enable nvidia-{suspend,resume,hibernate}`
 * reboot
 * to check which gpu is running-
@@ -36,11 +36,16 @@ Things to do after installing Fedora 35
 * `sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel`
 * `sudo dnf install lame\* --exclude=lame-devel`
 * `sudo dnf group upgrade --with-optional Multimedia` 
+* `sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin`
+* `sudo dnf groupupdate sound-and-video`
 * `sudo dnf config-manager --set-enabled fedora-cisco-openh264`
 * `sudo dnf install -y gstreamer1-plugin-openh264 mozilla-openh264`
 * `sudo dnf install -y ffmpeg-libs`
 * Hardware Video Acceleration - https://wiki.archlinux.org/title/Hardware_video_acceleration
 * https://wiki.archlinux.org/title/firefox#Hardware_video_acceleration
+* media.ffmpeg.vaapi.enabled  true
+* gfx.webrender.all           true
+* media.ffvpx.enabled         false
 
 ### Flatpak
 
