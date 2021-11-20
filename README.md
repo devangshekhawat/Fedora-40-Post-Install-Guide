@@ -2,7 +2,20 @@
 Things to do after installing Fedora 35
 ### Dnf-Conf
 
-* `echo 'fastestmirror=1' | sudo tee -a /etc/dnf/dnf.conf echo 'max_parallel_downloads=10' | sudo tee -a /etc/dnf/dnf.conf echo 'deltarpm=true' | sudo tee -a /etc/dnf/dnf.conf`
+* `echo 'fastestmirror=1' | sudo tee -a /etc/dnf/dnf.conf`
+`echo 'max_parallel_downloads=10' | sudo tee -a /etc/dnf/dnf.conf`
+`echo 'deltarpm=true' | sudo tee -a /etc/dnf/dnf.conf`
+`cat /etc/dnf/dnf.conf`
+* Output should match this
+[main]
+gpgcheck=1
+installonly_limit=3
+clean_requirements_on_remove=True
+best=False
+skip_if_unavailable=True
+fastestmirror=1
+max_parallel_downloads=10
+deltarpm=true`
 
 ### RPM Fusion release
 
