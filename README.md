@@ -7,7 +7,7 @@ Things to do after installing Fedora 35
 ### RPM Fusion release
 
 * `sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E%fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfreerelease-$(rpm -E %fedora).noarch.rpm`
-* `sudo dnf update -y'
+* `sudo dnf update -y`
 
 
 ### Nvidia Drivers (must be on latest kernel)
@@ -17,20 +17,19 @@ Things to do after installing Fedora 35
 * `sudo dnf install akmod-nvidia`
 * `sudo dnf install xorg-x11-drv-nvidia-cuda`
 * WAIT FOR ATLEASE 5 Mins before REBOOTING
-* * `sudo dnf install xorg-x11-drv-nvidia-cuda-libs`
+* `sudo dnf install xorg-x11-drv-nvidia-cuda-libs`
 * `sudo dnf install xorg-x11-drv-nvidia-power`
 * `sudo systemctl enable nvidia-{suspend,resume,hibernate}`
 * reboot
 * to check which gpu is running-
 
-  `glxinfo|egrep "OpenGL vendor|OpenGL renderer`
+  `glxinfo|egrep "OpenGL vendor|OpenGL renderer"`
    and
-   `/sbin/lspci | grep -e 3D`
+  `/sbin/lspci | grep -e 3D`
 
 ### Set Hostname
 
 * `hostnamectl set-hostname fedora`
-
 
 ### Media Codecs
 
@@ -48,26 +47,14 @@ Things to do after installing Fedora 35
 * gfx.webrender.all           true
 * media.ffvpx.enabled         false
 
+### Battery Life
+* Fedora 35 comes pre-installed with power-profiles-daemon which works amazing. Auto-cpufreq is just trash, tlp(heavily configured) is good but to my testing PPD gave half an hour worth of extra battery life and it comes preinstalled so why bother? only downside is that it only works with systemd installed so if you dont like systemd and want to change it no luck sorry. For me personally, I would rather use endeavour if I wanted to swap such critical parts of the system, Fedora just works great OTB.
+* This post previously also had system76-power to turn off the dGPU entirely to save battery life in case you never use it but on many systems it doesnt play good with PPD and the added battery life comes with many gimmicks like html5 video playback on all browsers. So I advise you to not use it, atleast on Fedora.
+ 
 ### Flatpak
 
 * `flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo`
 * `flatpak update`
-
-### Atom
-
-* sudo rpm -Uvh atom.rpm
-* Packages
-- atom-beautify@0.33.4
-- atom-ide-ui@0.13.0
-- delete-lines@0.5.0
-- file-icons@2.1.43
-- ide-css@0.3.5
-- ide-html@0.6.2
-- ide-json@0.2.1
-- ide-python@1.5.0
-- markdown-preview-enhanced@0.18.5
-- markdown-toc@0.4.2
-- minimap@4.29.9
 
 ### Theming
 
