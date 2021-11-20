@@ -7,7 +7,7 @@ Things to do after installing Fedora 35
 `echo 'deltarpm=true' | sudo tee -a /etc/dnf/dnf.conf`
 `cat /etc/dnf/dnf.conf`
 * Output should match this
-
+```
 [main] 
 gpgcheck=1 
 installonly_limit=3 
@@ -17,19 +17,22 @@ skip_if_unavailable=True
 fastestmirror=1 
 max_parallel_downloads=10 
 deltarpm=true 
-
+```
 ### Update 
 * `sudo dnf -y upgrade --refresh`
 
 ### RPM Fusion release
 
 * `sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm`
-* ```sudo dnf upgrade --refresh
+* then
+```
+sudo dnf upgrade --refresh
 sudo dnf groupupdate core
 sudo dnf install -y rpmfusion-free-release-tainted
 sudo dnf install -y rpmfusion-nonfree-release-tainted 
 sudo dnf install -y dnf-plugins-core
-sudo dnf install -y *-firmware```
+sudo dnf install -y *-firmware
+```
 
 ### Nvidia Drivers (must be on latest kernel)
 
@@ -43,11 +46,13 @@ sudo dnf install -y *-firmware```
 * `sudo systemctl enable nvidia-{suspend,resume,hibernate}`
 * reboot
 * to check which gpu is running-
-
-  `glxinfo|egrep "OpenGL vendor|OpenGL renderer"`
-   and
-  `/sbin/lspci | grep -e 3D`
-
+```
+glxinfo|egrep "OpenGL vendor|OpenGL renderer"
+```
+and
+```
+/sbin/lspci | grep -e 3D
+```
 ### Set Hostname
 
 * `hostnamectl set-hostname fedora`
