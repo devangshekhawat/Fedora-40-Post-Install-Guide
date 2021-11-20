@@ -7,7 +7,8 @@ Things to do after installing Fedora 35
 `echo 'deltarpm=true' | sudo tee -a /etc/dnf/dnf.conf`
 `cat /etc/dnf/dnf.conf`
 * Output should match this
-`[main]
+
+```[main]
 gpgcheck=1
 installonly_limit=3
 clean_requirements_on_remove=True
@@ -15,7 +16,7 @@ best=False
 skip_if_unavailable=True
 fastestmirror=1
 max_parallel_downloads=10
-deltarpm=true`
+deltarpm=true```
 
 ### Update 
 * `sudo dnf -y upgrade --refresh`
@@ -23,13 +24,12 @@ deltarpm=true`
 ### RPM Fusion release
 
 * `sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm`
-* `sudo dnf upgrade --refresh
+* ```sudo dnf upgrade --refresh
 sudo dnf groupupdate core
 sudo dnf install -y rpmfusion-free-release-tainted
 sudo dnf install -y rpmfusion-nonfree-release-tainted 
 sudo dnf install -y dnf-plugins-core
-sudo dnf install -y *-firmware`
-
+sudo dnf install -y *-firmware```
 
 ### Nvidia Drivers (must be on latest kernel)
 
