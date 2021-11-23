@@ -40,9 +40,10 @@ sudo dnf install -y *-firmware
 * `sudo dnf update -y`
 * `sudo dnf install akmod-nvidia`
 * `sudo dnf install xorg-x11-drv-nvidia-cuda`
-* WAIT FOR ATLEASE 5 Mins before REBOOTING
+* `xorg-x11-drv-nvidia-libs`
 * `sudo dnf install xorg-x11-drv-nvidia-power`
 * `sudo systemctl enable nvidia-{suspend,resume,hibernate}`
+* WAIT FOR ATLEASE 5 Mins before REBOOTING
 * reboot
 * to check which gpu is running-
 ```
