@@ -82,7 +82,7 @@ and
 * `flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo`
 * `flatpak update`
 
-### Theming
+### Theming [personal taste, please raise an issue if you know something better that is not adwaita!]
 
 * https://github.com/EliverLara/Nordic
 * `git clone https://github.com/vinceliuice/Tela-icon-theme`
