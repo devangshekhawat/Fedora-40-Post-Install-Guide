@@ -77,17 +77,16 @@ and
 * Fedora 35 comes pre-installed with power-profiles-daemon which works amazing. Auto-cpufreq is just trash, tlp(heavily configured) is good but to my testing PPD gave half an hour worth of extra battery life and it comes preinstalled so why bother? only downside is that it only works with systemd installed so if you dont like systemd and want to change it no luck sorry. For me personally, I would rather use endeavour if I wanted to swap such critical parts of the system, Fedora just works great OTB.
 * This post previously also had system76-power to turn off the dGPU entirely to save battery life in case you never use it but on many systems it doesnt play good with PPD and the added battery life comes with many gimmicks like choppy html5 video playback on FF. So I advise you to not use it, atleast on Fedora. The Pop!OS implementation is great though.
 
-### System-76 Power
-* `sudo dnf copr enable szydell/system76`
-* `sudo dnf install system76-driver`
-* `sudo dnf install system76-power`
-* `sudo systemctl enable system76-power system76-power-wake`
-* `git clone https://github.com/pop-os/gnome-shell-extension-system76-power.git`
-* `cd gnome-shell-extension-system76-power`
-* `sudo dnf install nodejs-typescript`
-* `make`
-* `make install`
-
+~~### System-76 Power ~~
+~~* `sudo dnf copr enable szydell/system76`
+~~* `sudo dnf install system76-driver`
+~~* `sudo dnf install system76-power`
+~~* `sudo systemctl enable system76-power system76-power-wake`
+~~* `git clone https://github.com/pop-os/gnome-shell-extension-system76-power.git`
+~~* `cd gnome-shell-extension-system76-power`
+~~* `sudo dnf install nodejs-typescript`
+~~* `make`
+~~* `make install`
  
 ### Flatpak
 
