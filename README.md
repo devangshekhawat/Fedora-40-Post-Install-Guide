@@ -43,7 +43,7 @@ sudo dnf install -y *-firmware
 * `xorg-x11-drv-nvidia-libs`
 * `sudo dnf install xorg-x11-drv-nvidia-power`
 * `sudo systemctl enable nvidia-{suspend,resume,hibernate}`
-* WAIT FOR ATLEASE 5 Mins before REBOOTING
+* WAIT FOR ATLEAST 5 Mins before REBOOTING. THIS IS VERY CRUCIAL.
 * reboot
 * to check which gpu is running-
 ```
