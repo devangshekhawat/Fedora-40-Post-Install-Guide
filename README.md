@@ -95,11 +95,16 @@ and
 
 ### Theming [personal taste, please tell me if you know something better!]
 
+# GTK Themes
 * https://github.com/EliverLara/Nordic
-* `git clone https://github.com/vinceliuice/Tela-icon-theme`
-  `cd Tela-icon-theme`
-  `./install.sh`
-* https://vsthemes.org/uploads/posts/2020-04/1586853771_daniel-leone-v7datklzzaw-unsplash-modded.jpg
+* https://github.com/vinceliuice/Orchis-theme
+* https://github.com/vinceliuice/Graphite-gtk-theme
+* https://github.com/vinceliuice/Colloid-gtk-theme
+
+# Icons
+* https://github.com/vinceliuice/Tela-icon-theme`
+
+# Grub Theme
 * https://github.com/vinceliuice/grub2-themes
 
 ### Gnome Extensions
