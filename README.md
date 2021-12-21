@@ -78,15 +78,15 @@ and
 * This post previously also had system76-power to turn off the dGPU entirely to save battery life in case you never use it but on many systems it doesnt play good with PPD and the added battery life comes with many gimmicks like choppy html5 video playback on FF. So I advise you to not use it, atleast on Fedora. The Pop!OS implementation is great though.
 
 ~~### System-76 Power ~~
-~~* `sudo dnf copr enable szydell/system76`
-~~* `sudo dnf install system76-driver`
-~~* `sudo dnf install system76-power`
-~~* `sudo systemctl enable system76-power system76-power-wake`
-~~* `git clone https://github.com/pop-os/gnome-shell-extension-system76-power.git`
-~~* `cd gnome-shell-extension-system76-power`
-~~* `sudo dnf install nodejs-typescript`
-~~* `make`
-~~* `make install`
+~~* `sudo dnf copr enable szydell/system76`~~
+~~* `sudo dnf install system76-driver`~~
+~~* `sudo dnf install system76-power`~~
+~~* `sudo systemctl enable system76-power system76-power-wake`~~
+~~* `git clone https://github.com/pop-os/gnome-shell-extension-system76-power.git`~~
+~~* `cd gnome-shell-extension-system76-power`~~
+~~* `sudo dnf install nodejs-typescript`~~
+~~* `make`~~
+~~* `make install`~~
  
 ### Flatpak
 
