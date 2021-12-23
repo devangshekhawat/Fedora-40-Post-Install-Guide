@@ -96,13 +96,19 @@ and
 ### Theming [personal taste, please tell me if you know something better!]
 
 # GTK Themes
+* https://github.com/vinceliuice/Colloid-gtk-theme (currently using)
 * https://github.com/EliverLara/Nordic
 * https://github.com/vinceliuice/Orchis-theme
 * https://github.com/vinceliuice/Graphite-gtk-theme
 * https://github.com/vinceliuice/Colloid-gtk-theme
 
+# Use themes in Flatpaks
+* `sudo flatpak override --filesystem=$HOME/.themes`
+* `sudo flatpak override --env=GTK_THEME=my-theme` 
+
 # Icons
-* https://github.com/vinceliuice/Tela-icon-theme`
+* https://github.com/vinceliuice/Tela-icon-theme
+* https://github.com/vinceliuice/Colloid-gtk-theme/tree/main/icon-theme
 
 # Grub Theme
 * https://github.com/vinceliuice/grub2-themes
