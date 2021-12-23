@@ -1,6 +1,6 @@
 # Fedora-35-Post-Install-Guide
 Things to do after installing Fedora 35
-### Dnf-Conf
+## Dnf-Conf
 
 * `echo 'fastestmirror=1' | sudo tee -a /etc/dnf/dnf.conf`
 `echo 'max_parallel_downloads=10' | sudo tee -a /etc/dnf/dnf.conf`
@@ -18,10 +18,10 @@ fastestmirror=1
 max_parallel_downloads=10 
 deltarpm=true 
 ```
-### Update 
+## Update 
 * `sudo dnf -y upgrade --refresh`
 
-### RPM Fusion release
+## RPM Fusion release
 
 * `sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm`
 * then
@@ -34,7 +34,7 @@ sudo dnf install -y dnf-plugins-core
 sudo dnf install -y *-firmware
 ```
 
-### Nvidia Drivers (must be on latest kernel)
+## Nvidia Drivers (must be on latest kernel)
 
 * `modinfo -F version nvidia`
 * `sudo dnf update -y`
@@ -53,11 +53,11 @@ and
 ```
 /sbin/lspci | grep -e 3D
 ```
-### Set Hostname
+## Set Hostname
 
 * `hostnamectl set-hostname fedora`
 
-### Media Codecs
+## Media Codecs
 
 * `sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel`
 * `sudo dnf install lame\* --exclude=lame-devel`
@@ -73,11 +73,11 @@ and
 * gfx.webrender.all           true
 * media.ffvpx.enabled         false
 
-### Battery Life
+## Battery Life
 * Fedora 35 comes pre-installed with power-profiles-daemon which works amazing. Auto-cpufreq is just trash, tlp(heavily configured) is good but to my testing PPD gave half an hour worth of extra battery life and it comes preinstalled so why bother? only downside is that it only works with systemd installed so if you dont like systemd and want to change it no luck sorry. For me personally, I would rather use endeavour if I wanted to swap such critical parts of the system, Fedora just works great OTB.
 * System76-power is awesome and even better than ppd but might not work but still worth trying.
 
-### System-76 Power
+## System-76 Power
 * `sudo dnf copr enable szydell/system76`
 * `sudo dnf install system76-driver`
 * `sudo dnf install system76-power`
@@ -88,32 +88,32 @@ and
 * `make`
 * `make install`
  
-### Flatpak
+## Flatpak
 
 * `flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo`
 * `flatpak update`
 
-### Theming [personal taste, please tell me if you know something better!]
+## Theming
 
-# GTK Themes
+### GTK Themes
 * https://github.com/vinceliuice/Colloid-gtk-theme (currently using)
 * https://github.com/EliverLara/Nordic
 * https://github.com/vinceliuice/Orchis-theme
 * https://github.com/vinceliuice/Graphite-gtk-theme
 * https://github.com/vinceliuice/Colloid-gtk-theme
 
-# Use themes in Flatpaks
+### Use themes in Flatpaks
 * `sudo flatpak override --filesystem=$HOME/.themes`
 * `sudo flatpak override --env=GTK_THEME=my-theme` 
 
-# Icons
+### Icons
 * https://github.com/vinceliuice/Tela-icon-theme
 * https://github.com/vinceliuice/Colloid-gtk-theme/tree/main/icon-theme
 
-# Grub Theme
+### Grub Theme
 * https://github.com/vinceliuice/grub2-themes
 
-### Gnome Extensions
+## Gnome Extensions
 
 * [Extensions Sync](https://extensions.gnome.org/extension/1486/extensions-sync/)
 * [Gesture Improvements](https://extensions.gnome.org/extension/4245/gesture-improvements/)
@@ -125,4 +125,3 @@ and
 * [Bluetooth Quick Connect](https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/)
 * [Input Output Device Chooser](https://github.com/mmalafaia/gse-sound-output-device-chooser/tree/patch-1)
 * [Gnome Shell Extension Indicator](https://extensions.gnome.org/extension/615/appindicator-support/)
-
