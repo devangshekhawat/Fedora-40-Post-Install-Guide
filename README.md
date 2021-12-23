@@ -100,7 +100,6 @@ and
 * https://github.com/EliverLara/Nordic
 * https://github.com/vinceliuice/Orchis-theme
 * https://github.com/vinceliuice/Graphite-gtk-theme
-* https://github.com/vinceliuice/Colloid-gtk-theme
 
 ### Use themes in Flatpaks
 * `sudo flatpak override --filesystem=$HOME/.themes`
