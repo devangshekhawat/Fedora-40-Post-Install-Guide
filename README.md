@@ -53,6 +53,11 @@ and
 ```
 /sbin/lspci | grep -e 3D
 ```
+### Negativor Drivers (For System-76 power, DON't INSTALL BOTH!)
+* `sudo dnf config-manager --add-repo=https://negativo17.org/repos/fedora-nvidia.repo`
+* `sudo dnf remove *nvidia*`
+* `dnf -y install nvidia-driver nvidia-driver-cuda nvidia-settings`
+
 ## Set Hostname
 
 * `hostnamectl set-hostname fedora`
@@ -67,11 +72,6 @@ and
 * `sudo dnf config-manager --set-enabled fedora-cisco-openh264`
 * `sudo dnf install -y gstreamer1-plugin-openh264 mozilla-openh264`
 * `sudo dnf install -y ffmpeg-libs`
-* Hardware Video Acceleration - https://wiki.archlinux.org/title/Hardware_video_acceleration
-* https://wiki.archlinux.org/title/firefox#Hardware_video_acceleration
-* media.ffmpeg.vaapi.enabled  true
-* gfx.webrender.all           true
-* media.ffvpx.enabled         false
 
 ## Battery Life
 * Fedora 35 comes pre-installed with power-profiles-daemon which works amazing. Auto-cpufreq is just trash, tlp(heavily configured) is good but to my testing PPD gave half an hour worth of extra battery life and it comes preinstalled so why bother? only downside is that it only works with systemd installed so if you dont like systemd and want to change it no luck sorry. For me personally, I would rather use endeavour if I wanted to swap such critical parts of the system, Fedora just works great OTB.
@@ -92,6 +92,13 @@ and
 
 * `flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo`
 * `flatpak update`
+
+
+## Firefox Theme
+
+* `git clone https://github.com/EliverLara/firefox-nordic-theme && cd firefox-nordic-theme`
+* `./scripts/install.sh -g -p *.default-release`
+* also set media.ffmpeg.vaapi.enabled to true in about:config
 
 ## Theming
 
@@ -124,3 +131,4 @@ and
 * [Bluetooth Quick Connect](https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/)
 * [Input Output Device Chooser](https://github.com/mmalafaia/gse-sound-output-device-chooser/tree/patch-1)
 * [Gnome Shell Extension Indicator](https://extensions.gnome.org/extension/615/appindicator-support/)
+* [Clipboard Indicator](https://extensions.gnome.org/extension/779/clipboard-indicator/)
