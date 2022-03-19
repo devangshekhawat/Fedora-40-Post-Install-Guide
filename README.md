@@ -53,7 +53,7 @@ and
 ```
 /sbin/lspci | grep -e 3D
 ```
-### Negativor Drivers (For System-76 power, DON't INSTALL BOTH!)
+### Negativo Drivers (For System-76 power, DON't INSTALL THIS WITH PROP.!)
 * `sudo dnf config-manager --add-repo=https://negativo17.org/repos/fedora-nvidia.repo`
 * `sudo dnf remove *nvidia*`
 * `dnf -y install nvidia-driver nvidia-driver-cuda nvidia-settings`
