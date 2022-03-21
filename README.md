@@ -34,7 +34,10 @@ sudo dnf install -y dnf-plugins-core
 sudo dnf install -y *-firmware
 ```
 
-## Nvidia Drivers (must be on latest kernel)
+## Battery Life
+* Fedora 35 comes pre-installed with power-profiles-daemon which works great. Auto-cpufreq is just trash. Tlp(heavily configured) gives slightly better battery life. System76-power might give you better battery life and if you also want graphics switching you'll need negativo drivers instead of the default prop. or nouveau.
+
+## Nvidia Drivers (MUST BE ON LATEST KERNEL + DONT INSTALL THIS IF YOU'RE GOING TO USE SYSTEM76-POWER!!)
 
 * `modinfo -F version nvidia`
 * `sudo dnf update -y`
@@ -53,13 +56,26 @@ and
 ```
 /sbin/lspci | grep -e 3D
 ```
-### Negativo Drivers (For System-76 power, DON't INSTALL THIS WITH PROP.!)
+
+## Negativo Drivers (For System-76 power, DON't INSTALL THIS WITH PROP.!!)
 * `sudo dnf config-manager --add-repo=https://negativo17.org/repos/fedora-nvidia.repo`
 * `sudo dnf remove *nvidia*`
 * `dnf -y install nvidia-driver nvidia-driver-cuda nvidia-settings`
 
-## Set Hostname
 
+## System-76 Power
+* `sudo systemctl mask power-profile-daemon`
+* `sudo dnf copr enable szydell/system76`
+* `sudo dnf install system76-driver`
+* `sudo dnf install system76-power`
+* `sudo systemctl enable system76-power system76-power-wake`
+* `git clone https://github.com/pop-os/gnome-shell-extension-system76-power.git`
+* `cd gnome-shell-extension-system76-power`
+* `sudo dnf install nodejs-typescript`
+* `make`
+* `make install`
+
+## Set Hostname
 * `hostnamectl set-hostname fedora`
 
 ## Media Codecs
@@ -73,21 +89,6 @@ and
 * `sudo dnf install -y gstreamer1-plugin-openh264 mozilla-openh264`
 * `sudo dnf install -y ffmpeg-libs`
 
-## Battery Life
-* Fedora 35 comes pre-installed with power-profiles-daemon which works amazing. Auto-cpufreq is just trash, tlp(heavily configured) is good but to my testing PPD gave half an hour worth of extra battery life and it comes preinstalled so why bother? only downside is that it only works with systemd installed so if you dont like systemd and want to change it no luck sorry. For me personally, I would rather use endeavour if I wanted to swap such critical parts of the system, Fedora just works great OTB.
-* System76-power is awesome and even better than ppd but might not work but still worth trying.
-
-## System-76 Power
-* `sudo dnf copr enable szydell/system76`
-* `sudo dnf install system76-driver`
-* `sudo dnf install system76-power`
-* `sudo systemctl enable system76-power system76-power-wake`
-* `git clone https://github.com/pop-os/gnome-shell-extension-system76-power.git`
-* `cd gnome-shell-extension-system76-power`
-* `sudo dnf install nodejs-typescript`
-* `make`
-* `make install`
- 
 ## Flatpak
 
 * `flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo`
