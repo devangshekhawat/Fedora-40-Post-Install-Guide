@@ -1,5 +1,5 @@
 # Fedora-36-Post-Install-Guide
-Things to do after installing Fedora 35
+Things to do after installing Fedora 36
 ## Dnf-Conf
 
 * `echo 'fastestmirror=1' | sudo tee -a /etc/dnf/dnf.conf`
