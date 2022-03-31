@@ -39,7 +39,8 @@ deltarpm=true
 * power-profiles-daemon works great on many systems but in case you're facing sub-optimal battery backup try installing tlp by:
 * `sudo dnf install tlp tlp-rdw`
 * `sudo systemctl mask power-profiles-daemon`
-* You might want to use NVIDIA Optimus if you have a gaming laptop with an NVIDIA gpu to get better battery life: 
+* You might want to use NVIDIA Optimus if you have a gaming laptop with an NVIDIA gpu to get better battery life:
+* Still trying to figure out how to get it working under wayland.
 
 ## Set Hostname
 * `hostnamectl set-hostname YOUR_HOSTNAME`
