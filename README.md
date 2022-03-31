@@ -1,12 +1,9 @@
 # Fedora-36-Post-Install-Guide
 Things to do after installing Fedora 36
-## Dnf-Conf
 
-* `echo 'fastestmirror=1' | sudo tee -a /etc/dnf/dnf.conf`
-`echo 'max_parallel_downloads=10' | sudo tee -a /etc/dnf/dnf.conf`
-`echo 'deltarpm=true' | sudo tee -a /etc/dnf/dnf.conf`
-`cat /etc/dnf/dnf.conf`
-* Output should match this
+## Dnf-Conf
+* `sudo nano /etc/dnf/dnf.conf` 
+* Copy and replace the text with the following:
 ```
 [main] 
 gpgcheck=1 
@@ -18,92 +15,43 @@ fastestmirror=1
 max_parallel_downloads=10 
 deltarpm=true 
 ```
-## Update 
-* `sudo dnf -y upgrade --refresh`
 
 ## RPM Fusion release
-
 * `sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm`
-* then
-```
-sudo dnf upgrade --refresh
-sudo dnf groupupdate core
-sudo dnf install -y rpmfusion-free-release-tainted
-sudo dnf install -y rpmfusion-nonfree-release-tainted 
-sudo dnf install -y dnf-plugins-core
-sudo dnf install -y *-firmware
-```
+
+## Update 
+* `sudo dnf -y upgrade --refresh`
+* Reboot
+
+## NVIDIA Drivers
+* * `sudo dnf update -y` # to make sure you're on the latest kernel
+* Enable RPM Fusion Nvidia non-free repository and install from there
+* or alternatively
+* `sudo dnf install akmod-nvidia`
+
+### NVIDIA Cuda
+* `sudo dnf install xorg-x11-drv-nvidia-cuda`
+* Wait for atleast 5 mins before rebooting in order to let the kernel headers to compile.
+* `modinfo -F version nvidia` # check if the kernel is compiled.
+* reboot
 
 ## Battery Life
-* Fedora 35 comes pre-installed with power-profiles-daemon which works great. Auto-cpufreq is just trash. Tlp(heavily configured) gives slightly better battery life. System76-power might give you better battery life and if you also want graphics switching you'll need negativo drivers instead of the default prop. or nouveau.
-
-## Nvidia Drivers (MUST BE ON LATEST KERNEL + DONT INSTALL THIS IF YOU'RE GOING TO USE SYSTEM76-POWER!!)
-
-* `modinfo -F version nvidia`
-* `sudo dnf update -y`
-* `sudo dnf install akmod-nvidia`
-* `sudo dnf install xorg-x11-drv-nvidia-cuda`
-* `xorg-x11-drv-nvidia-libs`
-* `sudo dnf install xorg-x11-drv-nvidia-power`
-* `sudo systemctl enable nvidia-{suspend,resume,hibernate}`
-* WAIT FOR ATLEAST 5 Mins before REBOOTING. THIS IS VERY CRUCIAL.
-* reboot
-* to check which gpu is running-
-```
-glxinfo|egrep "OpenGL vendor|OpenGL renderer"
-```
-and
-```
-/sbin/lspci | grep -e 3D
-```
-
-## Negativo Drivers (For System-76 power, DON't INSTALL THIS WITH PROP.!!)
-* `sudo dnf config-manager --add-repo=https://negativo17.org/repos/fedora-nvidia.repo`
-* `sudo dnf remove *nvidia*`
-* `dnf -y install nvidia-driver nvidia-driver-cuda nvidia-settings`
-
-
-## System-76 Power
-* `sudo systemctl mask power-profile-daemon`
-* `sudo dnf copr enable szydell/system76`
-* `sudo dnf install system76-driver`
-* `sudo dnf install system76-power`
-* `sudo systemctl enable system76-power system76-power-wake`
-* `git clone https://github.com/pop-os/gnome-shell-extension-system76-power.git`
-* `cd gnome-shell-extension-system76-power`
-* `sudo dnf install nodejs-typescript`
-* `make`
-* `make install`
+* power-profiles-daemon works great on many systems but in case you're facing sub-optimal battery backup try installing tlp by:
+* `sudo dnf install tlp tlp-rdw`
+* `sudo systemctl mask power-profiles-daemon`
+* You might want to use NVIDIA Optimus if you have a gaming laptop with an NVIDIA gpu to get better battery life: 
 
 ## Set Hostname
-* `hostnamectl set-hostname fedora`
-
-## Media Codecs
-
-* `sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel`
-* `sudo dnf install lame\* --exclude=lame-devel`
-* `sudo dnf group upgrade --with-optional Multimedia` 
-* `sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin`
-* `sudo dnf groupupdate sound-and-video`
-* `sudo dnf config-manager --set-enabled fedora-cisco-openh264`
-* `sudo dnf install -y gstreamer1-plugin-openh264 mozilla-openh264`
-* `sudo dnf install -y ffmpeg-libs`
+* `hostnamectl set-hostname YOUR_HOSTNAME`
 
 ## Flatpak
-
 * `flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo`
 * `flatpak update`
-
-
-## Firefox Theme
-
-* `git clone https://github.com/EliverLara/firefox-nordic-theme && cd firefox-nordic-theme`
-* `./scripts/install.sh -g -p *.default-release`
-* also set media.ffmpeg.vaapi.enabled to true in about:config
 
 ## Theming
 
 ### GTK Themes
+* https://Li
 * https://github.com/vinceliuice/Colloid-gtk-theme (currently using)
 * https://github.com/EliverLara/Nordic
 * https://github.com/vinceliuice/Orchis-theme
@@ -117,11 +65,15 @@ and
 * https://github.com/vinceliuice/Tela-icon-theme
 * https://github.com/vinceliuice/Colloid-gtk-theme/tree/main/icon-theme
 
+### Firefox Theme
+* `git clone https://github.com/EliverLara/firefox-nordic-theme && cd firefox-nordic-theme`
+* `./scripts/install.sh -g -p *.default-release`
+* also set media.ffmpeg.vaapi.enabled to true in about:config
+
 ### Grub Theme
 * https://github.com/vinceliuice/grub2-themes
 
 ## Gnome Extensions
-
 * [Extensions Sync](https://extensions.gnome.org/extension/1486/extensions-sync/)
 * [Gesture Improvements](https://extensions.gnome.org/extension/4245/gesture-improvements/)
 * [User Themes](https://extensions.gnome.org/extension/19/user-themes/)
