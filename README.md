@@ -24,7 +24,7 @@ deltarpm=true
 * Reboot
 
 ## NVIDIA Drivers
-* * `sudo dnf update -y` # to make sure you're on the latest kernel
+* `sudo dnf update -y` # to make sure you're on the latest kernel
 * Enable RPM Fusion Nvidia non-free repository and install from there
 * or alternatively
 * `sudo dnf install akmod-nvidia`
