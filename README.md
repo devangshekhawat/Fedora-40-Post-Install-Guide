@@ -40,7 +40,7 @@ deltarpm=true
 * `sudo dnf install tlp tlp-rdw`
 * `sudo systemctl mask power-profiles-daemon`
 * You might want to use NVIDIA Optimus if you have a gaming laptop with an NVIDIA gpu to get better battery life:
-* Still trying to figure out how to get it working under wayland.
+Update: it works OOTB on xorg and am still trying to figure out how to get it working under wayland. (running nvidia-smi indicates that 2w of power is still being used even on idle, you might want to look at system76's power module in order completely derail the gpu off of the PCIe lane)
 
 ## Set Hostname
 * `hostnamectl set-hostname YOUR_HOSTNAME`
