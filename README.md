@@ -28,6 +28,9 @@ deltarpm=true
 * Enable RPM Fusion Nvidia non-free repository and install from there
 * or alternatively
 * `sudo dnf install akmod-nvidia`
+* Wait for atleast 5 mins before rebooting in order to let the kernel headers compile.
+* `modinfo -F version nvidia` # check if the kernel is compiled.
+* Reboot
 
 ### NVIDIA Cuda
 * `sudo dnf install xorg-x11-drv-nvidia-cuda`
@@ -40,7 +43,27 @@ deltarpm=true
 * `sudo dnf install tlp tlp-rdw`
 * `sudo systemctl mask power-profiles-daemon`
 * You might want to use NVIDIA Optimus if you have a gaming laptop with an NVIDIA gpu to get better battery life:
-Update: it works OOTB on xorg and am still trying to figure out how to get it working under wayland. (running nvidia-smi indicates that 2w of power is still being used even on idle, you might want to look at system76's power module in order completely derail the gpu off of the PCIe lane)
+Update: Optimus works OOTB on xorg and am still trying to figure out how to get it working under wayland. (running nvidia-smi indicates that 2w of power is still being used even on idle, you might want to look at system76's power module in order completely derail the gpu off of the PCIe lane)
+
+## System76-Power:
+* `sudo dnf copr enable szydell/system76`
+* `sudo dnf install system76-driver`
+* `sudo dnf install system76-power`
+* `sudo systemctl enable system76-power system76-power-wake`
+* `git clone https://github.com/pop-os/gnome-shell-extension-system76-power.git`
+* `cd gnome-shell-extension-system76-power`
+* `sudo dnf install nodejs-typescript`
+* `make`
+* `make install`
+
+## Media Codecs
+* sudo dnf groupupdate sound-and-video sudo dnf install -y libdvdcss
+* sudo dnf install -y gstreamer1-plugins-{bad-*,good-*,ugly-*,base} gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel ffmpeg gstreamer-ffmpeg
+* sudo dnf install -y lame* --exclude=lame-devel
+* sudo dnf group upgrade --with-optional Multimedia
+* sudo dnf install -y gstreamer1-plugin-openh264 mozilla-openh264
+* sudo dnf config-manager --set-enabled fedora-cisco-openh264
+* sudo dnf install -y gstreamer1-plugin-openh264 mozilla-openh264
 
 ## Set Hostname
 * `hostnamectl set-hostname YOUR_HOSTNAME`
@@ -69,7 +92,7 @@ Update: it works OOTB on xorg and am still trying to figure out how to get it wo
 ### Firefox Theme
 * `git clone https://github.com/EliverLara/firefox-nordic-theme && cd firefox-nordic-theme`
 * `./scripts/install.sh -g -p *.default-release`
-* also set media.ffmpeg.vaapi.enabled to true in about:config
+* also set: media.ffmpeg.vaapi.enabled: true layers.acceleration.force-enabled : true
 
 ### Grub Theme
 * https://github.com/vinceliuice/grub2-themes
