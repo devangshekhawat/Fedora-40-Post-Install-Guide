@@ -47,8 +47,8 @@ deltarpm=true
 * `sudo dnf install tlp tlp-rdw`
 * and mask power-profiles-daemon by
 * `sudo systemctl mask power-profiles-daemon`
-* You might want to use NVIDIA Optimus if you have a gaming laptop with an NVIDIA gpu to get better battery life:
-Update: Optimus works OOTB on xorg and am still trying to figure out how to get it working under wayland. (running nvidia-smi indicates that 2w of power is still being used even on idle, you might want to look at system76's power module in order completely derail the gpu off of the PCIe lane)
+* Enable HW Acceleration in firefox by going to about:config and enabling media.ffmpeg.vaapi.enabled: true, layers.acceleration.force-enabled : true
+* You might want to use NVIDIA Optimus if you have a gaming laptop with an NVIDIA gpu to get better battery life, Optimus works OOTB on xorg and am still trying to figure out how to get it working under wayland. (running nvidia-smi indicates that 2w of power is still being used even on idle, you might want to look at system76's power module in order completely derail the gpu off of the PCIe lane)
 
 ## System76-Power:
 * Works on non system76 systems just as well. Do not install this if you want to install tlp. Only install this if optimus doesn't work and you still require GPU-Switching, only laptops with a discrete GPU would like to install this to save power by turning off the dGPU or running on hybrid.
@@ -78,10 +78,10 @@ Update: Optimus works OOTB on xorg and am still trying to figure out how to get 
 * `flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo`
 * `flatpak update`
 
-## Theming
+## Theming [Optional]
 
 ### GTK Themes
-* https://Li
+* Don't install this if you don't want GNOME
 * https://github.com/vinceliuice/Colloid-gtk-theme (currently using)
 * https://github.com/EliverLara/Nordic
 * https://github.com/vinceliuice/Orchis-theme
@@ -98,12 +98,12 @@ Update: Optimus works OOTB on xorg and am still trying to figure out how to get 
 ### Firefox Theme
 * `git clone https://github.com/EliverLara/firefox-nordic-theme && cd firefox-nordic-theme`
 * `./scripts/install.sh -g -p *.default-release`
-* also set: media.ffmpeg.vaapi.enabled: true layers.acceleration.force-enabled : true
 
 ### Grub Theme
 * https://github.com/vinceliuice/grub2-themes
 
 ## Gnome Extensions
+* Don't install this if you don't use GNOME
 * [Extensions Sync](https://extensions.gnome.org/extension/1486/extensions-sync/)
 * [Gesture Improvements](https://extensions.gnome.org/extension/4245/gesture-improvements/)
 * [User Themes](https://extensions.gnome.org/extension/19/user-themes/)
