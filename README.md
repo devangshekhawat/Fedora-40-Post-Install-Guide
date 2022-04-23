@@ -1,4 +1,4 @@
-# Fedora-36-Post-Install-Guide
+# Fedora 36 Post Install Guide
 Things to do after installing Fedora 36
 
 ## Faster Updates
