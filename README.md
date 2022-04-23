@@ -51,7 +51,7 @@ deltarpm=true
 * You might want to use NVIDIA Optimus if you have a gaming laptop with an NVIDIA gpu to get better battery life, Optimus works OOTB on xorg and am still trying to figure out how to get it working under wayland. (running nvidia-smi indicates that 2w of power is still being used even on idle, you might want to look at system76's power module in order completely derail the gpu off of the PCIe lane)
 
 ## System76-Power:
-* Works on non system76 systems just as well. Only laptops with a discrete GPU would like to install this to save power by turning off the dGPU or running on hybrid,in case you do install this, do not install tlp but still mask power-profiles-daemon like instructed above. Only install this if optimus doesn't work and you still require GPU-Switching.
+* Works on non system76 systems just as well. Only laptops with a discrete GPU would like to install this to save power by turning off the dGPU or running on hybrid. In case you do install this, do not install tlp but still mask power-profiles-daemon like instructed above. Only install this if optimus doesn't work and you still require GPU-Switching.
 * `sudo dnf copr enable szydell/system76`
 * `sudo dnf install system76-driver`
 * `sudo dnf install system76-power`
@@ -64,13 +64,13 @@ deltarpm=true
 
 ## Media Codecs
 * Install these to get proper video playback.
-* sudo dnf groupupdate sound-and-video sudo dnf install -y libdvdcss
-* sudo dnf install -y gstreamer1-plugins-{bad-*,good-*,ugly-*,base} gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel ffmpeg gstreamer-ffmpeg
-* sudo dnf install -y lame* --exclude=lame-devel
-* sudo dnf group upgrade --with-optional Multimedia
-* sudo dnf install -y gstreamer1-plugin-openh264 mozilla-openh264
-* sudo dnf config-manager --set-enabled fedora-cisco-openh264
-* sudo dnf install -y gstreamer1-plugin-openh264 mozilla-openh264
+* `sudo dnf groupupdate sound-and-video sudo dnf install -y libdvdcss`
+* `sudo dnf install -y gstreamer1-plugins-{bad-*,good-*,ugly-*,base} gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel ffmpeg gstreamer-ffmpeg`
+* `sudo dnf install -y lame* --exclude=lame-devel`
+* `sudo dnf group upgrade --with-optional Multimedia`
+* `sudo dnf install -y gstreamer1-plugin-openh264 mozilla-openh264`
+* `sudo dnf config-manager --set-enabled fedora-cisco-openh264`
+* `sudo dnf install -y gstreamer1-plugin-openh264 mozilla-openh264`
 
 ## Set Hostname
 * `hostnamectl set-hostname YOUR_HOSTNAME`
