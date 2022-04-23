@@ -1,7 +1,7 @@
 # Fedora-36-Post-Install-Guide
 Things to do after installing Fedora 36
 
-## Dnf-Conf
+## Faster Updates
 * `sudo nano /etc/dnf/dnf.conf` 
 * Copy and replace the text with the following:
 ```
@@ -17,6 +17,7 @@ deltarpm=true
 ```
 
 ## RPM Fusion release
+* Fedora has disabled the repositories for non-free .rpm software by default. Follow this if you use non-free software like discord and some multimedia codecs etc. As a general rule of thumb its advised to do this unless you absolutely don't want any non-free software on your system.
 * `sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm`
 
 ## Update 
@@ -24,6 +25,7 @@ deltarpm=true
 * Reboot
 
 ## NVIDIA Drivers
+* Only follow this if you have a NVIDIA gpu. Also, don't follow this if you have a gpu which has dropped support for newer driver releases i.e. anything earlier than nvidia GTX 900, 1000, 1600 and RTX 2000, 3000 series. Fedora comes preinstalled with NOUVEAU drivers which may or may not work better on those GPUs. This should be followed by Desktop and Laptop users alike.
 * `sudo dnf update -y` # to make sure you're on the latest kernel
 * Enable RPM Fusion Nvidia non-free repository and install from there
 * or alternatively
@@ -33,19 +35,23 @@ deltarpm=true
 * Reboot
 
 ### NVIDIA Cuda
+* Install this if you use CUDA utilising applications i.e. Davinci Resolve, Blender etc.
 * `sudo dnf install xorg-x11-drv-nvidia-cuda`
 * Wait for atleast 5 mins before rebooting in order to let the kernel headers to compile.
 * `modinfo -F version nvidia` # check if the kernel is compiled.
 * reboot
 
 ## Battery Life
+* Follow this if you have a Laptop.
 * power-profiles-daemon works great on many systems but in case you're facing sub-optimal battery backup try installing tlp by:
 * `sudo dnf install tlp tlp-rdw`
+* and mask power-profiles-daemon by
 * `sudo systemctl mask power-profiles-daemon`
 * You might want to use NVIDIA Optimus if you have a gaming laptop with an NVIDIA gpu to get better battery life:
 Update: Optimus works OOTB on xorg and am still trying to figure out how to get it working under wayland. (running nvidia-smi indicates that 2w of power is still being used even on idle, you might want to look at system76's power module in order completely derail the gpu off of the PCIe lane)
 
 ## System76-Power:
+* Do not install this if you want to install tlp. Only install this if optimus doesn't work and you still require GPU-Switching, only laptops with a discrete GPU would like to install this to save power by turning off the dGPU or running on hybrid.
 * `sudo dnf copr enable szydell/system76`
 * `sudo dnf install system76-driver`
 * `sudo dnf install system76-power`
@@ -85,7 +91,7 @@ Update: Optimus works OOTB on xorg and am still trying to figure out how to get 
 * `sudo flatpak override --filesystem=$HOME/.themes`
 * `sudo flatpak override --env=GTK_THEME=my-theme` 
 
-### Icons
+### Icon Packs
 * https://github.com/vinceliuice/Tela-icon-theme
 * https://github.com/vinceliuice/Colloid-gtk-theme/tree/main/icon-theme
 
