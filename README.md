@@ -51,7 +51,7 @@ deltarpm=true
 Update: Optimus works OOTB on xorg and am still trying to figure out how to get it working under wayland. (running nvidia-smi indicates that 2w of power is still being used even on idle, you might want to look at system76's power module in order completely derail the gpu off of the PCIe lane)
 
 ## System76-Power:
-* Do not install this if you want to install tlp. Only install this if optimus doesn't work and you still require GPU-Switching, only laptops with a discrete GPU would like to install this to save power by turning off the dGPU or running on hybrid.
+* Works on non system76 systems just as well. Do not install this if you want to install tlp. Only install this if optimus doesn't work and you still require GPU-Switching, only laptops with a discrete GPU would like to install this to save power by turning off the dGPU or running on hybrid.
 * `sudo dnf copr enable szydell/system76`
 * `sudo dnf install system76-driver`
 * `sudo dnf install system76-power`
