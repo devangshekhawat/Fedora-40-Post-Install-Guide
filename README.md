@@ -19,15 +19,17 @@ deltarpm=true
 ## RPM Fusion release
 * Fedora has disabled the repositories for non-free .rpm software by default. Follow this if you use non-free software like discord and some multimedia codecs etc. As a general rule of thumb its advised to do this unless you absolutely don't want any non-free software on your system.
 * `sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm`
+* also while you're at it, install core dnf plugins by 
+* `sudo dnf install dnf-plugins-core`
 
 ## Update 
 * `sudo dnf -y upgrade --refresh`
 * Reboot
 
 ## NVIDIA Drivers
-* Only follow this if you have a NVIDIA gpu. Also, don't follow this if you have a gpu which has dropped support for newer driver releases i.e. anything earlier than nvidia GTX 900, 1000, 1600 and RTX 2000, 3000 series. Fedora comes preinstalled with NOUVEAU drivers which may or may not work better on those GPUs. This should be followed by Desktop and Laptop users alike.
+* Only follow this if you have a NVIDIA gpu. Also, don't follow this if you have a gpu which has dropped support for newer driver releases i.e. anything earlier than nvidia GT/GTX 600, 700, 800, 900, 1000, 1600 and RTX 2000, 3000 series. Fedora comes preinstalled with NOUVEAU drivers which may or may not work better on those GPUs older GPUs. This should be followed by Desktop and Laptop users alike.
 * `sudo dnf update -y` # to make sure you're on the latest kernel
-* Enable RPM Fusion Nvidia non-free repository and install from there
+* Enable RPM Fusion Nvidia non-free repository in the app store and install from there 
 * or alternatively
 * `sudo dnf install akmod-nvidia`
 * Wait for atleast 5 mins before rebooting in order to let the kernel headers compile.
@@ -35,7 +37,7 @@ deltarpm=true
 * Reboot
 
 ### NVIDIA Cuda
-* Install this if you use CUDA utilising applications i.e. Davinci Resolve, Blender etc.
+* Install this if you use applications that use CUDA i.e. Davinci Resolve, Blender etc.
 * `sudo dnf install xorg-x11-drv-nvidia-cuda`
 * Wait for atleast 5 mins before rebooting in order to let the kernel headers to compile.
 * `modinfo -F version nvidia` # check if the kernel is compiled.
@@ -48,10 +50,10 @@ deltarpm=true
 * and mask power-profiles-daemon by
 * `sudo systemctl mask power-profiles-daemon`
 * Enable HW Acceleration in firefox by going to about:config and enabling media.ffmpeg.vaapi.enabled: true, layers.acceleration.force-enabled : true
-* You might want to use NVIDIA Optimus if you have a gaming laptop with an NVIDIA gpu to get better battery life, Optimus works OOTB on xorg and am still trying to figure out how to get it working under wayland. (running nvidia-smi indicates that 2w of power is still being used even on idle, you might want to look at system76's power module in order completely derail the gpu off of the PCIe lane)
+* NVIDIA Optimus works OOTB on proprietary drivers but running nvidia-smi indicates that it uses 2w of power on idle. You might want to install install system76-power if you want to go further and save that extra 2w worth of battery life but it comes at the cost of having to switch to hybrid-graphics each time you want to use your discrete GPU. Its not worth installing if you use your gpu atleast once every boot. I mostly do basic web browsing so I have installed it and run it on integrated graphics most of the time. Choose accordingly.
 
 ## System76-Power:
-* Works on non system76 systems just as well. Only laptops with a discrete GPU would like to install this to save power by turning off the dGPU or running on hybrid. In case you do install this, do not install tlp but still mask power-profiles-daemon like instructed above. Only install this if optimus doesn't work and you still require GPU-Switching.
+* Works on non system76 systems just as well. Only laptops with a discrete GPU would like to install this to save power by turning off the dGPU, running on integrated and switching to hybrid when they truly need the extra graphics power. In case you do install this, do not install tlp but still mask power-profiles-daemon like instructed above. You can also also install this if optimus doesn't work and you still require GPU-Switching, one such case might be when you have a pre GTX 500 series GPU.
 * `sudo dnf copr enable szydell/system76`
 * `sudo dnf install system76-driver`
 * `sudo dnf install system76-power`
@@ -82,7 +84,7 @@ deltarpm=true
 ## Theming [Optional]
 
 ### GTK Themes
-* Don't install this if you don't want GNOME
+* Don't install these if you aren't using GNOME
 * https://github.com/vinceliuice/Colloid-gtk-theme (currently using)
 * https://github.com/EliverLara/Nordic
 * https://github.com/vinceliuice/Orchis-theme
