@@ -77,7 +77,7 @@ deltarpm=true
 ## Set Hostname
 * `hostnamectl set-hostname YOUR_HOSTNAME`
 
-## Flatpak
+## Update Flatpak
 * `flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo`
 * `flatpak update`
 
@@ -106,7 +106,6 @@ deltarpm=true
 * https://github.com/vinceliuice/grub2-themes
 
 ## Gnome Extensions
-* Don't install this if you don't use GNOME
 * [Extensions Sync](https://extensions.gnome.org/extension/1486/extensions-sync/)
 * [Gesture Improvements](https://extensions.gnome.org/extension/4245/gesture-improvements/)
 * [User Themes](https://extensions.gnome.org/extension/19/user-themes/)
