@@ -49,7 +49,10 @@ deltarpm=true
 * `sudo dnf install tlp tlp-rdw`
 * and mask power-profiles-daemon by
 * `sudo systemctl mask power-profiles-daemon`
-* Enable HW Acceleration in firefox by going to about:config and enabling media.ffmpeg.vaapi.enabled: true, layers.acceleration.force-enabled : true
+* Enable HW Acceleration in firefox by going to about:config and enabling 
+media.ffmpeg.vaapi.enabled  true
+gfx.webrender.all           true
+media.ffvpx.enabled         false
 * NVIDIA Optimus works OOTB on proprietary drivers but running nvidia-smi indicates that it uses 2w of power on idle. You might want to install install system76-power if you want to go further and save that extra 2w worth of battery life but it comes at the cost of having to switch to hybrid-graphics each time you want to use your discrete GPU. Its not worth installing if you use your gpu atleast once every boot. I mostly do basic web browsing so I have installed it and run it on integrated graphics most of the time. Choose accordingly.
 
 ## System76-Power:
