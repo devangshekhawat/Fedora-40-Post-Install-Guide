@@ -40,7 +40,7 @@ deltarpm=true
 * Install this if you use applications that use CUDA i.e. Davinci Resolve, Blender etc.
 * `sudo dnf install xorg-x11-drv-nvidia-cuda`
 * Wait for atleast 5 mins before rebooting in order to let the kernel headers to compile.
-* `modinfo -F version nvidia` # check if the kernel is compiled.
+* `modinfo -F version nvidia` # check if the kernel modules are compiled.
 * reboot
 
 ## Battery Life
