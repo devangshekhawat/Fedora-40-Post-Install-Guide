@@ -19,8 +19,8 @@ deltarpm=true
 ## RPM Fusion release
 * Fedora has disabled the repositories for non-free .rpm software by default. Follow this if you use non-free software like discord and some multimedia codecs etc. As a general rule of thumb its advised to do this unless you absolutely don't want any non-free software on your system.
 * `sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm`
-* also while you're at it, install core dnf plugins by 
-* `sudo dnf install dnf-plugins-core`
+* also while you're at it, install app-stream metadata by
+* `sudo dnf groupupdate core`
 
 ## Update 
 * `sudo dnf -y upgrade --refresh`
