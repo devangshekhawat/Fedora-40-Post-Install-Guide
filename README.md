@@ -32,16 +32,11 @@ deltarpm=true
 * Enable RPM Fusion Nvidia non-free repository in the app store and install from there 
 * or alternatively
 * `sudo dnf install akmod-nvidia`
-* Wait for atleast 5 mins before rebooting in order to let the kernel headers compile.
-* `modinfo -F version nvidia` # check if the kernel is compiled.
-* Reboot
-
-### NVIDIA Cuda
 * Install this if you use applications that use CUDA i.e. Davinci Resolve, Blender etc.
 * `sudo dnf install xorg-x11-drv-nvidia-cuda`
-* Wait for atleast 5 mins before rebooting in order to let the kernel headers to compile.
-* `modinfo -F version nvidia` # check if the kernel modules are compiled.
-* reboot
+* Wait for atleast 5 mins before rebooting in order to let the kernel headers compile.
+* `modinfo -F version nvidia` # check if the kernel headers are compiled.
+* Reboot
 
 ## Battery Life
 * Follow this if you have a Laptop.
