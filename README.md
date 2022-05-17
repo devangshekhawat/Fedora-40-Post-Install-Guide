@@ -80,7 +80,7 @@ deltarpm=true
 ## Theming [Optional]
 
 ### GTK Themes
-* Don't install these if you aren't using GNOME
+* Don't install these if you are using a different spin of Fedora.
 * https://github.com/vinceliuice/Colloid-gtk-theme (currently using)
 * https://github.com/EliverLara/Nordic
 * https://github.com/vinceliuice/Orchis-theme
@@ -102,6 +102,7 @@ deltarpm=true
 * https://github.com/vinceliuice/grub2-themes
 
 ## Gnome Extensions
+* Don't install these if you are using a different spin of Fedora.
 * [Extensions Sync](https://extensions.gnome.org/extension/1486/extensions-sync/)
 * [Gesture Improvements](https://extensions.gnome.org/extension/4245/gesture-improvements/)
 * [User Themes](https://extensions.gnome.org/extension/19/user-themes/)
