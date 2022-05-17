@@ -42,8 +42,11 @@ deltarpm=true
 * Follow this if you have a Laptop.
 * power-profiles-daemon works great on many systems but in case you're facing sub-optimal battery backup try installing tlp by:
 * `sudo dnf install tlp tlp-rdw`
-* and mask power-profiles-daemon by
+* and mask power-profiles-daemon by:
 * `sudo systemctl mask power-profiles-daemon`
+* Also install powertop by:
+* `sudo apt install powertop`
+* `sudo powertop --auto-tune`
 * NVIDIA Optimus works OOTB on proprietary drivers but running nvidia-smi indicates that it uses 2w of power on idle. You might want to install install system76-power if you want to go further and save that extra 2w worth of battery life but it comes at the cost of having to switch to hybrid-graphics each time you want to use your discrete GPU. Its not worth installing if you use your gpu atleast once every boot. I mostly do basic web browsing so I have installed it and run it on integrated graphics most of the time. Choose accordingly.
 
 ## System76-Power:
