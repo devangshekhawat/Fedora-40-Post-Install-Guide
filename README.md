@@ -45,7 +45,7 @@ deltarpm=true
 * and mask power-profiles-daemon by:
 * `sudo systemctl mask power-profiles-daemon`
 * Also install powertop by:
-* `sudo apt install powertop`
+* `sudo dnf install powertop`
 * `sudo powertop --auto-tune`
 * NVIDIA Optimus works OOTB on proprietary drivers but running nvidia-smi indicates that it uses 2w of power on idle. You might want to install install system76-power if you want to go further and save that extra 2w worth of battery life but it comes at the cost of having to switch to hybrid-graphics each time you want to use your discrete GPU. Its not worth installing if you use your gpu atleast once every boot. I mostly do basic web browsing so I have installed it and run it on integrated graphics most of the time. Choose accordingly.
 
@@ -70,8 +70,7 @@ deltarpm=true
 * Helps decrease load on the CPU when watching videos on youtube by alloting the rendering to the dGPU/iGPU. Quite helpful in increasing battery backup on laptops.
 * Change the following setting in about:config
 * `media.ffmpeg.vaapi.enabled  true`
-* `gfx.webrender.all           true`
-* `media.ffvpx.enabled         false`
+* `layers.acceleration.force-enabled : true`
 
 ## Update Flatpak
 * `flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo`
