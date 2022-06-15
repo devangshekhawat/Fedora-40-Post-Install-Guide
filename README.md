@@ -116,3 +116,28 @@ deltarpm=true
 * [Input Output Device Chooser](https://github.com/mmalafaia/gse-sound-output-device-chooser/tree/patch-1)
 * [Gnome Shell Extension Indicator](https://extensions.gnome.org/extension/615/appindicator-support/)
 * [Clipboard Indicator](https://extensions.gnome.org/extension/779/clipboard-indicator/)
+
+
+## Apps [Optional]
+* These are Some Packages that I use and would recommend:
+```
+* Ferdium
+* Books 
+* Ulauncher 
+* Blanket
+* Krita
+* Blender
+* Logseq
+* Joplin
+* Transmission
+* yt-dlp
+* Celluloid
+* Pika backup 
+* Amberol
+* News flash
+* Foliate
+* Tangram
+* VS Codium
+* Blanket
+* Easyeffects
+```
