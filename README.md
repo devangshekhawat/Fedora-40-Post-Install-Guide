@@ -83,6 +83,7 @@ deltarpm=true
 
 ### GTK Themes
 * Don't install these if you are using a different spin of Fedora.
+* https://github.com/lassekongo83/adw-gtk3
 * https://github.com/vinceliuice/Colloid-gtk-theme
 * https://github.com/EliverLara/Nordic
 * https://github.com/vinceliuice/Orchis-theme
