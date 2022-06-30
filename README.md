@@ -126,24 +126,24 @@ deltarpm=true
 ## Apps [Optional]
 * These are Some Packages that I use and would recommend:
 ```
-* Ferdium
-* Books 
-* Ulauncher 
-* Blanket
-* Krita
-* Deja Dup Backups
-* Blender
-* Logseq
-* Joplin
-* Transmission
-* yt-dlp
-* Celluloid
-* Pika backup 
-* Amberol
-* News flash
-* Foliate
-* Tangram
-* VS Codium
-* Blanket
-* Easyeffects
+Ferdium
+Books 
+Ulauncher 
+Blanket
+Krita
+Deja Dup Backups
+Blender
+Logseq
+Joplin
+Transmission
+yt-dlp
+Celluloid
+Pika backup 
+Amberol
+News flash
+Foliate
+Tangram
+VS Codium
+Blanket
+Easyeffects
 ```
