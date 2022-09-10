@@ -52,7 +52,6 @@ deltarpm=true
 ## System76-Power:
 * Works on non system76 systems just as well. Only laptops with a discrete GPU would like to install this to save power by turning off the dGPU, running on integrated and switching to hybrid when they truly need the extra graphics power. In case you do install this, do not install tlp but still mask power-profiles-daemon like instructed above. You can also also install this if optimus doesn't work and you still require GPU-Switching, one such case might be when you have a pre GTX 500 series GPU.
 * `sudo dnf copr enable szydell/system76`
-* `sudo dnf install system76-driver`
 * `sudo dnf install system76-power`
 * `sudo systemctl enable system76-power system76-power-wake`
 * `git clone https://github.com/pop-os/gnome-shell-extension-system76-power.git`
