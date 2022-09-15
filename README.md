@@ -28,7 +28,7 @@ deltarpm=true
 
 ## NVIDIA Drivers
 * Only follow this if you have a NVIDIA gpu. Also, don't follow this if you have a gpu which has dropped support for newer driver releases i.e. anything earlier than nvidia GT/GTX 600, 700, 800, 900, 1000, 1600 and RTX 2000, 3000 series. Fedora comes preinstalled with NOUVEAU drivers which may or may not work better on those GPUs older GPUs. This should be followed by Desktop and Laptop users alike.
-* `sudo dnf update -y` # to make sure you're on the latest kernel
+* `sudo dnf update -y` to make sure you're on the latest kernel
 * Enable RPM Fusion Nvidia non-free repository in the app store and install from there 
 * or alternatively
 * `sudo dnf install akmod-nvidia`
