@@ -78,6 +78,18 @@ deltarpm=true
 ## Set Hostname
 * `hostnamectl set-hostname YOUR_HOSTNAME`
 
+## Speed Boost [optional]
+* Install Grub Customizer to implement these tweaks by
+* `sudo dnf install grub-customizer` 
+
+### Disable Mitigations 
+* Increases performance in multithreaded systems. The more core count you have the greater the performance gain. Not advised for host systems on some networks for increased security vulnerabilities, using it on daily driver systems won't fetch any problems. 5-30% performance gain varying upon systems.
+* Add `mitigations=off` in Kernel Parameters under General Settings in Grub Customizer and click save.
+
+### Zswap (for systems with <16 gigs of RAM)
+* Acts as virtual memory. Useful for sytems with <16 gigs of ram.
+* Add `zswap.enabled=1` in Kernel Parameters under General Settings in Grub Customizer and click save.
+
 ## Theming [Optional]
 
 ### GTK Themes
