@@ -49,7 +49,7 @@ deltarpm=true
 * `sudo powertop --auto-tune`
 * NVIDIA Optimus works OOTB on proprietary drivers but running nvidia-smi indicates that it uses 2w of power on idle. You might want to install install system76-power if you want to go further and save that extra 2w worth of battery life but it comes at the cost of having to switch to hybrid-graphics each time you want to use your discrete GPU. Its not worth installing if you use your gpu atleast once every boot. I mostly do basic web browsing so I have installed it and run it on integrated graphics most of the time. Choose accordingly.
 
-## System76-Power:
+### System76-Power[Optional]
 * Works on non system76 systems just as well. Only laptops with a discrete GPU would like to install this to save power by turning off the dGPU, running on integrated and switching to hybrid when they truly need the extra graphics power. In case you do install this, do not install tlp but still mask power-profiles-daemon like instructed above. You can also also install this if optimus doesn't work and you still require GPU-Switching, one such case might be when you have a pre GTX 500 series GPU.
 * `sudo dnf copr enable szydell/system76`
 * `sudo dnf install system76-power`
@@ -65,7 +65,7 @@ deltarpm=true
 * `sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin`
 * `sudo dnf groupupdate sound-and-video`
 
-## Firefox H/W Video Acceleration:
+## Firefox H/W Video Acceleration
 * Helps decrease load on the CPU when watching videos on youtube by alloting the rendering to the dGPU/iGPU. Quite helpful in increasing battery backup on laptops.
 * Change the following setting in about:config
 * `media.ffmpeg.vaapi.enabled  true`
@@ -78,7 +78,7 @@ deltarpm=true
 ## Set Hostname
 * `hostnamectl set-hostname YOUR_HOSTNAME`
 
-## Speed Boost [optional]
+## Speed Boost
 * Install Grub Customizer to implement these tweaks by
 * `sudo dnf install grub-customizer` 
 
