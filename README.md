@@ -17,7 +17,7 @@ deltarpm=true
 ```
 
 ## RPM Fusion release
-* Fedora has disabled the repositories for non-free .rpm software by default. Follow this if you use non-free software like discord and some multimedia codecs etc. As a general rule of thumb its advised to do this unless you absolutely don't want any non-free software on your system.
+* Fedora has disabled the repositories for non-free .rpm packages by default. Follow this if you want to use non-free software like Steam, Discord and some multimedia codecs etc. As a general rule of thumb its advised to do this unless you absolutely don't want any non-free software on your system.
 * `sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm`
 * also while you're at it, install app-stream metadata by
 * `sudo dnf groupupdate core`
@@ -50,20 +50,27 @@ deltarpm=true
 * NVIDIA Optimus works OOTB on proprietary drivers but running nvidia-smi indicates that it uses 2w of power on idle. You might want to install install system76-power if you want to go further and save that extra 2w worth of battery life but it comes at the cost of having to switch to hybrid-graphics each time you want to use your discrete GPU. Its not worth installing if you use your gpu atleast once every boot. I mostly do basic web browsing so I have installed it and run it on integrated graphics most of the time. Choose accordingly.
 
 ### System76-Power[Optional]
-* Works on non system76 systems just as well. Only laptops with a discrete GPU would like to install this to save power by turning off the dGPU, running on integrated and switching to hybrid when they truly need the extra graphics power. In case you do install this, do not install tlp but still mask power-profiles-daemon like instructed above. You can also also install this if optimus doesn't work and you still require GPU-Switching, one such case might be when you have a pre GTX 500 series GPU.
-* `sudo dnf copr enable szydell/system76`
-* `sudo dnf install system76-power`
-* `sudo systemctl enable system76-power system76-power-wake`
-* `git clone https://github.com/pop-os/gnome-shell-extension-system76-power.git`
-* `cd gnome-shell-extension-system76-power`
-* `sudo dnf install nodejs-typescript`
-* `make`
-* `make install`
+* Works on non system76 systems just as well. Only laptops with a discrete GPU would like to install this to save power by turning off the dGPU to run on integrated graphic and switching to hybrid when they truly need the extra graphics horsepower. In case you do install this, do not install tlp but still mask power-profiles-daemon like instructed above. You can also also install this if optimus doesn't work and you still require GPU-Switching, one such case might be when you have a pre GTX 500 series GPU. NVIDIA Optimus works flawlessly OOTB on post GTX 1000 series GPUs.
+````
+sudo dnf copr enable szydell/system76
+sudo dnf install system76-power
+sudo systemctl enable system76-power system76-power-wake
+git clone https://github.com/pop-os/gnome-shell-extension-system76-power.git
+cd gnome-shell-extension-system76-power
+sudo dnf install nodejs-typescript
+make
+make install
+````
 
 ## Media Codecs
-* Install these to get proper video playback.
-* `sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin`
-* `sudo dnf groupupdate sound-and-video`
+* Install these to get proper multimedia playback.
+````
+sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
+sudo dnf groupupdate sound-and-video
+sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
+sudo dnf install lame\* --exclude=lame-devel
+sudo dnf group upgrade --with-optional Multimedia
+````
 
 ## Firefox H/W Video Acceleration
 * Helps decrease load on the CPU when watching videos on youtube by alloting the rendering to the dGPU/iGPU. Quite helpful in increasing battery backup on laptops.
