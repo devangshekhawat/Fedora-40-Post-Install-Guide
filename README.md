@@ -85,6 +85,14 @@ sudo dnf group upgrade --with-optional Multimedia
 ## Set Hostname
 * `hostnamectl set-hostname YOUR_HOSTNAME`
 
+## Toggelable Tiling Window Manager
+* Can boost productivity immensely in certain workflows by automatically tiling windows. Can be turned off when you need floating windows.
+```
+sudo dnf install -y gnome-shell-extension-pop-shell xprop
+gnome-extensions enable pop-shell@system76.com
+```
+* A new icon with 3 overlapping windows must be visible in the top right corner of the screen from where you can toggle the extension.
+
 ## Speed Boost
 * Install Grub Customizer to implement these tweaks by
 * `sudo dnf install grub-customizer` 
