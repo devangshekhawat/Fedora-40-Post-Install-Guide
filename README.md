@@ -73,10 +73,9 @@ sudo dnf group upgrade --with-optional Multimedia
 ````
 
 ## Firefox H/W Video Acceleration
-* Helps decrease load on the CPU when watching videos on youtube by alloting the rendering to the dGPU/iGPU. Quite helpful in increasing battery backup on laptops.
-* Change the following setting in about:config
-* `media.ffmpeg.vaapi.enabled  true`
-* `layers.acceleration.force-enabled : true`
+* Helps decrease load on the CPU when watching videos online by alloting the rendering to the dGPU/iGPU. Quite helpful in increasing battery backup on laptops.
+* `sudo dnf install ffmpeg liba libva-utils`
+* If you have an intel chipset, install the `libva-intel-driver` package as well along with the above packages. 
 
 ## Update Flatpak
 * `flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo`
