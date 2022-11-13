@@ -1,4 +1,4 @@
-# Fedora 36 Post Install Guide
+# Fedora 37 Post Install Guide
 Things to do after installing Fedora 36
 
 ## Faster Updates
@@ -75,10 +75,31 @@ sudo dnf group upgrade --with-optional Multimedia
 ## H/W Video Acceleration
 * Helps decrease load on the CPU when watching videos online by alloting the rendering to the dGPU/iGPU. Quite helpful in increasing battery backup on laptops.
 
-### H/W Video Decoding with VA-API
+### H/W Video Decoding with VA-API 
 * `sudo dnf install ffmpeg ffmpeg-libs libva libva-utils`
-* If you have an intel chipset, install the `libva-intel-driver` package as well along with the packages above. 
-* If you have an amd chipset, install the `mesa-freeworld` package as well along with the packages above. 
+
+<details>
+<summary>Intel Chipset</summary>
+ 
+* If you have an intel chipset after installing the packages above., Do:
+* On a new install: `sudo dnf install intel-media-driver`
+</details>
+
+<details>
+<summary>AMD</summary>
+ 
+* If you have an AMD chipset, after installing the packages above do:
+* On a new install: `sudo dnf install --enablerepo=rpmfusion-free-updates-testing mesa-va-drivers-freeworld`
+* If you're upgrading from fedora 36: `sudo dnf swap --enablerepo=rpmfusion-free-updates-testing mesa-va-drivers mesa-va-drivers-freeworld` 
+</details>
+
+<details>
+<summary>NVIDIA</summary>
+ 
+* If you have an Nvidia chipset, after installing the packages above do:
+* On a new install: `sudo dnf install --enablerepo=rpmfusion-free-updates-testing mesa-vdpau-drivers-freeworld`
+* If you're upgrading from fedora 36: `sudo dnf swap --enablerepo=rpmfusion-free-updates-testing mesa-vdpau-drivers mesa-vdpau-drivers-freeworld` 
+</details>
 
 ### OpenH264 for Firefox
 * Enhance H.264/MPEG-4 media playback by doing:
