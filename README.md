@@ -16,8 +16,8 @@ max_parallel_downloads=10
 deltarpm=true 
 ```
 
-## RPM Fusion release
-* Fedora has disabled the repositories for non-free .rpm packages by default. Follow this if you want to use non-free software like Steam, Discord and some multimedia codecs etc. As a general rule of thumb its advised to do this unless you absolutely don't want any non-free software on your system.
+## RPM Fusion
+* Fedora has disabled the repositories for a lot of free and non-free .rpm packages by default. Follow this if you want to use non-free software like Steam, Discord and some multimedia codecs etc. As a general rule of thumb its advised to do this get access to many mainstream useful programs.
 * `sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm`
 * also while you're at it, install app-stream metadata by
 * `sudo dnf groupupdate core`
