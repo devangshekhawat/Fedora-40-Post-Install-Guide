@@ -75,9 +75,10 @@ sudo dnf group upgrade --with-optional Multimedia
 ## H/W Video Acceleration
 * Helps decrease load on the CPU when watching videos online by alloting the rendering to the dGPU/iGPU. Quite helpful in increasing battery backup on laptops.
 
-### H/W Video Decoding with VAapi
-* `sudo dnf install ffmpeg liba libva-utils`
+### H/W Video Decoding with VA-API
+* `sudo dnf install ffmpeg ffmpeg-libs libva libva-utils`
 * If you have an intel chipset, install the `libva-intel-driver` package as well along with the packages above. 
+* If you have an amd chipset, install the `mesa-freeworld` package as well along with the packages above. 
 
 ### OpenH264 for Firefox
 * Enhance H.264/MPEG-4 media playback by doing:
