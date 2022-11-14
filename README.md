@@ -1,5 +1,5 @@
 # Fedora 37 Post Install Guide
-Things to do after installing Fedora 36
+Things to do after installing Fedora 37
 
 ## Faster Updates
 * `sudo nano /etc/dnf/dnf.conf` 
