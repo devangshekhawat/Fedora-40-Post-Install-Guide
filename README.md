@@ -79,7 +79,7 @@ sudo dnf group upgrade --with-optional Multimedia
 * `sudo dnf install ffmpeg ffmpeg-libs libva libva-utils`
 
 <details>
-<summary>Intel Chipset</summary>
+<summary>Intel</summary>
  
 * If you have an intel chipset after installing the packages above., Do:
 * On a new install: `sudo dnf install intel-media-driver`
