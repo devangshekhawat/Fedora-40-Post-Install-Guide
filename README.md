@@ -117,6 +117,7 @@ sudo dnf install -y gstreamer1-plugin-openh264 mozilla-openh264
 * `hostnamectl set-hostname YOUR_HOSTNAME`
 
 ## Speed Boost
+* Allow you to squeeze out a little bit more performance from your system. Do not follow this if you share services and files through your network or are using fedora in a VM.
 * Install Grub Customizer to implement these tweaks by
 * `sudo dnf install grub-customizer` 
 
