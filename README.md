@@ -56,7 +56,6 @@ sudo fwupdmgr update
 * `modinfo -F version nvidia` # check if the kernel module is built.
 * Reboot
 * Enable Suspend to RAM/Disk
-* 
 ```
 sudo dnf install xorg-x11-drv-nvidia-power
 sudo systemctl enable nvidia-{suspend,resume,hibernate}
