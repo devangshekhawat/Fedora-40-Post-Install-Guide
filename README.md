@@ -46,14 +46,15 @@ sudo fwupdmgr update
 
 ## NVIDIA Drivers
 * Only follow this if you have a NVIDIA gpu. Also, don't follow this if you have a gpu which has dropped support for newer driver releases i.e. anything earlier than nvidia GT/GTX 600, 700, 800, 900, 1000, 1600 and RTX 2000, 3000 series. Fedora comes preinstalled with NOUVEAU drivers which may or may not work better on those older GPUs. This should be followed by Desktop and Laptop users alike.
+* Disable Secure Boot.
 * `sudo dnf update` to make sure you're on the latest kernel
 * Enable RPM Fusion Nvidia non-free repository in the app store and install from there 
 * or alternatively
 * `sudo dnf install akmod-nvidia`
 * Install this if you use applications that use CUDA i.e. Davinci Resolve, Blender etc.
 * `sudo dnf install xorg-x11-drv-nvidia-cuda`
-* Wait for atleast 5 mins before rebooting, letting the kernel headers compile.
-* `modinfo -F version nvidia` # check if the kernel headers are compiled.
+* Wait for atleast 5 mins before rebooting, to let the kermel module build.
+* `modinfo -F version nvidia` # check if the kernel module is built.
 * Reboot
 
 ## Battery Life
@@ -150,19 +151,23 @@ sudo dnf install -y gstreamer1-plugin-openh264 mozilla-openh264
 ## Gnome Extensions
 * Don't install these if you are using a different spin of Fedora.
 * Pop Shell - `sudo dnf install -y gnome-shell-extension-pop-shell xprop`
+* [GSconnect](https://extensions.gnome.org/extension/1319/gsconnect/) - do `sudo dnf install nautilus-python` for full support.
 * [Extensions Sync](https://extensions.gnome.org/extension/1486/extensions-sync/)
 * [Gesture Improvements](https://extensions.gnome.org/extension/4245/gesture-improvements/)
 * [User Themes](https://extensions.gnome.org/extension/19/user-themes/)
 * [Just Perfection](https://extensions.gnome.org/extension/3843/just-perfection/)
 * [Net Speed Simplified](https://extensions.gnome.org/extension/3724/net-speed-simplified/)
 * [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
-* [GSconnect](https://extensions.gnome.org/extension/1319/gsconnect/)
 * [Quick Settings Tweaker](https://extensions.gnome.org/extension/5446/quick-settings-tweaker/)
 * [Blur My Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)
 * [Bluetooth Quick Connect](https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/)
 * [Input Output Device Chooser](https://github.com/mmalafaia/gse-sound-output-device-chooser/tree/patch-1)
 * [Gnome Shell Extension Indicator](https://extensions.gnome.org/extension/615/appindicator-support/)
 * [Clipboard Indicator](https://extensions.gnome.org/extension/779/clipboard-indicator/)
+* [Legacy (GTK3) Theme Scheme Auto Switcher](https://extensions.gnome.org/extension/4998/legacy-gtk3-theme-scheme-auto-switcher/)
+* [Caffeine](https://extensions.gnome.org/extension/517/caffeine/)
+* [Vitals](https://extensions.gnome.org/extension/1460/vitals/)
+* [Tray Icons: Reloaded](https://extensions.gnome.org/extension/2890/tray-icons-reloaded/)
 
 ## Apps [Optional]
 * Packages for Rar and 7z compressed files support:
