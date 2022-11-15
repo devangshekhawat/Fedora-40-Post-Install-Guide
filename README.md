@@ -30,7 +30,6 @@ deltarpm=true
 ## Firmware and Hardware drivers
 * Fedora doesn't ship with non-free hardware drivers by default.
 * You can get them by enabling the non-free tainted repo. To install it, update your system and then do:
-* 
 ```
 sudo dnf install -y rpmfusion-nonfree-release-tainted 
 sudo dnf install -y dnf-plugins-core
