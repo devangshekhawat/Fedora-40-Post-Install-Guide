@@ -11,10 +11,11 @@ installonly_limit=3
 clean_requirements_on_remove=True 
 best=False 
 skip_if_unavailable=True 
-fastestmirror=0
+fastestmirror=1
 max_parallel_downloads=10 
 deltarpm=true
 ``` 
+* Note: The fastestmirror=1 modification can be counterproductive at times, use it at your own discretion. Set it to fastestmirror=0 if you are facing bad download speeds. Many users have reported better download speeds with the modification so it is there by default.
 
 ## RPM Fusion
 * Fedora has disabled the repositories for a lot of free and non-free .rpm packages by default. Follow this if you want to use non-free software like Steam, Discord and some multimedia codecs etc. As a general rule of thumb its advised to do this get access to many mainstream useful programs.
