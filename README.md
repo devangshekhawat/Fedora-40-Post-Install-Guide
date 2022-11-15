@@ -15,7 +15,7 @@ fastestmirror=1
 max_parallel_downloads=10 
 deltarpm=true
 ``` 
-* Note: The fastestmirror=1 modification can be counterproductive at times, use it at your own discretion. Set it to fastestmirror=0 if you are facing bad download speeds. Many users have reported better download speeds with the modification so it is there by default.
+* Note: The fastestmirror=1 plugin can be counterproductive at times, use it at your own discretion. Set it to fastestmirror=0 if you are facing bad download speeds. Many users have reported better download speeds with the plugin enables so it is there by default.
 
 ## RPM Fusion
 * Fedora has disabled the repositories for a lot of free and non-free .rpm packages by default. Follow this if you want to use non-free software like Steam, Discord and some multimedia codecs etc. As a general rule of thumb its advised to do this get access to many mainstream useful programs.
@@ -26,6 +26,23 @@ deltarpm=true
 ## Update 
 * `sudo dnf -y upgrade --refresh`
 * Reboot
+
+## Firmware and Hardware drivers
+* Fedora doesn't ship with non-free hardware drivers by default.
+* You can get them by enabling the non-free tainted repo. Do:
+* 
+```
+sudo dnf install -y rpmfusion-nonfree-release-tainted 
+sudo dnf install -y dnf-plugins-core
+sudo dnf install -y *-firmware
+```
+* While you're at it, if your system supports firmware update delivery through lvfs, update your device firmware by:
+```
+sudo fwupdmgr get-devices 
+sudo fwupdmgr refresh --force 
+sudo fwupdmgr get-updates 
+sudo fwupdmgr update
+```
 
 ## NVIDIA Drivers
 * Only follow this if you have a NVIDIA gpu. Also, don't follow this if you have a gpu which has dropped support for newer driver releases i.e. anything earlier than nvidia GT/GTX 600, 700, 800, 900, 1000, 1600 and RTX 2000, 3000 series. Fedora comes preinstalled with NOUVEAU drivers which may or may not work better on those older GPUs. This should be followed by Desktop and Laptop users alike.
@@ -140,6 +157,7 @@ sudo dnf install -y gstreamer1-plugin-openh264 mozilla-openh264
 * [Net Speed Simplified](https://extensions.gnome.org/extension/3724/net-speed-simplified/)
 * [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
 * [GSconnect](https://extensions.gnome.org/extension/1319/gsconnect/)
+* [Quick Settings Tweaker](https://extensions.gnome.org/extension/5446/quick-settings-tweaker/)
 * [Blur My Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)
 * [Bluetooth Quick Connect](https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/)
 * [Input Output Device Chooser](https://github.com/mmalafaia/gse-sound-output-device-chooser/tree/patch-1)
