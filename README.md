@@ -81,7 +81,7 @@ make install
 ````
 
 ## Media Codecs
-* Install these to get proper multimedia playback. (Note: You do not need to follow this if you plan on installing ffmpeg.) 
+* Install these to get proper multimedia playback. (Note: You can skip this if you plan on installing ffmpeg.) 
 ````
 sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
 sudo dnf groupupdate sound-and-video
