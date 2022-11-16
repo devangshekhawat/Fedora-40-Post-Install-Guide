@@ -185,8 +185,7 @@ Easyeffects
 * https://github.com/manishprivet/dynamic-gnome-wallpapers
 
 ### Firefox Theme
-* `git clone https://github.com/EliverLara/firefox-nordic-theme && cd firefox-nordic-theme`
-* `./scripts/install.sh -g -p *.default-release`
+* Install Firefox Gnome theme by: `curl -s -o- https://raw.githubusercontent.com/rafaelmardojai/firefox-gnome-theme/master/scripts/install-by-curl.sh | bash`
 
 ### Grub Theme
 * https://github.com/vinceliuice/grub2-themes
