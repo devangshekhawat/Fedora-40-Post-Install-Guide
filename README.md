@@ -99,12 +99,7 @@ sudo dnf group upgrade --with-optional Multimedia
 </details>
 
 ### OpenH264 for Firefox
-* Enhance H.264/MPEG-4 media playback by doing:
-```
-sudo dnf config-manager --set-enabled fedora-cisco-openh264
-sudo dnf install -y gstreamer1-plugin-openh264 mozilla-openh264
-```
-* Then enable the OpenH264 plugin in Firefox by navigating through the settings.
+* Enable the OpenH264 Plugin in Firefox's settings.
 
 ## Update Flatpak
 * `flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo`
