@@ -92,14 +92,6 @@ sudo dnf install --enablerepo=rpmfusion-free-updates-testing mesa-va-drivers-fre
 ```
 </details>
 
-<details>
-<summary>NVIDIA</summary>
- 
-* If you have an Nvidia chipset, after installing the packages above do:
-* On a new install: `sudo dnf install --enablerepo=rpmfusion-free-updates-testing mesa-vdpau-drivers-freeworld`
-* If you're upgrading from fedora 36: `sudo dnf swap --enablerepo=rpmfusion-free-updates-testing mesa-vdpau-drivers mesa-vdpau-drivers-freeworld` 
-</details>
-
 ### OpenH264 for Firefox
 * Enable the OpenH264 Plugin in Firefox's settings.
 
