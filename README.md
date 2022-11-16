@@ -27,15 +27,9 @@ deltarpm=true
 * `sudo dnf -y upgrade --refresh`
 * Reboot
 
-## Firmware and Hardware drivers
-* Fedora doesn't ship with non-free hardware drivers by default.
-* You can get them by enabling the non-free tainted repo. To install it, update your system and then do:
+## Firmware
 ```
-sudo dnf install rpmfusion-nonfree-release-tainted 
-sudo dnf install dnf-plugins-core
-sudo dnf install *-firmware
-```
-* While you're at it, if your system supports firmware update delivery through lvfs, update your device firmware by:
+* If your system supports firmware update delivery through lvfs, update your device firmware by:
 ```
 sudo fwupdmgr get-devices 
 sudo fwupdmgr refresh --force 
