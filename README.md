@@ -119,17 +119,14 @@ sudo dnf install --enablerepo=rpmfusion-free-updates-testing mesa-va-drivers-fre
 * Don't install these if you are using a different spin of Fedora.
 * Pop Shell - `sudo dnf install -y gnome-shell-extension-pop-shell xprop`
 * [GSconnect](https://extensions.gnome.org/extension/1319/gsconnect/) - do `sudo dnf install nautilus-python` for full support.
-* [Extensions Sync](https://extensions.gnome.org/extension/1486/extensions-sync/)
 * [Gesture Improvements](https://extensions.gnome.org/extension/4245/gesture-improvements/)
 * [User Themes](https://extensions.gnome.org/extension/19/user-themes/)
 * [Just Perfection](https://extensions.gnome.org/extension/3843/just-perfection/)
-* [Net Speed Simplified](https://extensions.gnome.org/extension/3724/net-speed-simplified/)
 * [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
 * [Quick Settings Tweaker](https://extensions.gnome.org/extension/5446/quick-settings-tweaker/)
 * [Blur My Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)
 * [Bluetooth Quick Connect](https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/)
-* [Input Output Device Chooser](https://github.com/mmalafaia/gse-sound-output-device-chooser/tree/patch-1)
-* [Gnome Shell Extension Indicator](https://extensions.gnome.org/extension/615/appindicator-support/)
+* [App Indicator Support](https://extensions.gnome.org/extension/615/appindicator-support/)
 * [Clipboard Indicator](https://extensions.gnome.org/extension/779/clipboard-indicator/)
 * [Legacy (GTK3) Theme Scheme Auto Switcher](https://extensions.gnome.org/extension/4998/legacy-gtk3-theme-scheme-auto-switcher/)
 * [Caffeine](https://extensions.gnome.org/extension/517/caffeine/)
