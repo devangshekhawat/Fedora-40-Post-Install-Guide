@@ -28,7 +28,6 @@ deltarpm=true
 * Reboot
 
 ## Firmware
-```
 * If your system supports firmware update delivery through lvfs, update your device firmware by:
 ```
 sudo fwupdmgr get-devices 
