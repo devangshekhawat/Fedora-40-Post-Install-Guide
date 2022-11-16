@@ -130,7 +130,6 @@ sudo dnf install --enablerepo=rpmfusion-free-updates-testing mesa-va-drivers-fre
 * [Clipboard Indicator](https://extensions.gnome.org/extension/779/clipboard-indicator/)
 * [Legacy (GTK3) Theme Scheme Auto Switcher](https://extensions.gnome.org/extension/4998/legacy-gtk3-theme-scheme-auto-switcher/)
 * [Caffeine](https://extensions.gnome.org/extension/517/caffeine/)
-* [Coverflow Alt-Tab](https://extensions.gnome.org/extension/97/coverflow-alt-tab/)
 * [Vitals](https://extensions.gnome.org/extension/1460/vitals/)
 
 ## Apps [Optional]
