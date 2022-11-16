@@ -79,15 +79,17 @@ sudo dnf group upgrade --with-optional Multimedia
 <summary>Intel</summary>
  
 * If you have an intel chipset after installing the packages above., Do:
-* On a new install: `sudo dnf install intel-media-driver`
+* `sudo dnf install intel-media-driver`
 </details>
 
 <details>
 <summary>AMD</summary>
  
 * If you have an AMD chipset, after installing the packages above do:
-* On a new install: `sudo dnf install --enablerepo=rpmfusion-free-updates-testing mesa-va-drivers-freeworld`
-* If you're upgrading from fedora 36: `sudo dnf swap --enablerepo=rpmfusion-free-updates-testing mesa-va-drivers mesa-va-drivers-freeworld` 
+ ```
+sudo dnf remove mesa-va-drivers
+sudo dnf install --enablerepo=rpmfusion-free-updates-testing mesa-va-drivers-freeworld`
+```
 </details>
 
 <details>
