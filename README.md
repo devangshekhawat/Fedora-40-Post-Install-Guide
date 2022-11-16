@@ -48,11 +48,6 @@ sudo fwupdmgr update
 * Wait for atleast 5 mins before rebooting, to let the kermel module build.
 * `modinfo -F version nvidia` # check if the kernel module is built.
 * Reboot
-* Enable Suspend to RAM/Disk
-```
-sudo dnf install xorg-x11-drv-nvidia-power
-sudo systemctl enable nvidia-{suspend,resume,hibernate}
-```
 
 ## Battery Life
 * Follow this if you have a Laptop.
