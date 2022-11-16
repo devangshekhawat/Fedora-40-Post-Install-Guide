@@ -134,7 +134,6 @@ sudo dnf install --enablerepo=rpmfusion-free-updates-testing mesa-va-drivers-fre
 * [Legacy (GTK3) Theme Scheme Auto Switcher](https://extensions.gnome.org/extension/4998/legacy-gtk3-theme-scheme-auto-switcher/)
 * [Caffeine](https://extensions.gnome.org/extension/517/caffeine/)
 * [Vitals](https://extensions.gnome.org/extension/1460/vitals/)
-* [Tray Icons: Reloaded](https://extensions.gnome.org/extension/2890/tray-icons-reloaded/)
 
 ## Apps [Optional]
 * Packages for Rar and 7z compressed files support:
