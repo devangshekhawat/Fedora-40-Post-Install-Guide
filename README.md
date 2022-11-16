@@ -39,14 +39,14 @@ sudo fwupdmgr update
 ## NVIDIA Drivers
 * Only follow this if you have a NVIDIA gpu. Also, don't follow this if you have a gpu which has dropped support for newer driver releases i.e. anything earlier than nvidia GT/GTX 600, 700, 800, 900, 1000, 1600 and RTX 2000, 3000 series. Fedora comes preinstalled with NOUVEAU drivers which may or may not work better on those older GPUs. This should be followed by Desktop and Laptop users alike.
 * Disable Secure Boot.
-* Do `sudo dnf update` to make sure you're on the latest kernel and then reboot.
+* `sudo dnf update` #To make sure you're on the latest kernel and then reboot.
 * Enable RPM Fusion Nvidia non-free repository in the app store and install from there,
 * or alternatively
 * `sudo dnf install akmod-nvidia`
 * Install this if you use applications that use CUDA i.e. Davinci Resolve, Blender etc.
 * `sudo dnf install xorg-x11-drv-nvidia-cuda`
-* Wait for atleast 5 mins before rebooting, to let the kermel module build.
-* `modinfo -F version nvidia` # check if the kernel module is built.
+* Wait for atleast 5 mins before rebooting, to let the kermel module get built.
+* `modinfo -F version nvidia` #Check if the kernel module is built.
 * Reboot
 
 ## Battery Life
