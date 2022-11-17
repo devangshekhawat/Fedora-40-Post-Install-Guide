@@ -83,12 +83,11 @@ sudo dnf group upgrade --with-optional Multimedia
 </details>
 
 <details>
-<summary>AMD</summary>
+<summary>AMD</summary>No need to do this for intel integrated graphics. Mesa drivers are for AMD graphics, who lost support for h264/h245 in the fedora repositories in f37 due to legal concerns.
  
 * If you have an AMD chipset, after installing the packages above do:
- ```
-sudo dnf remove mesa-va-drivers
-sudo dnf install --enablerepo=rpmfusion-free-updates-testing mesa-va-drivers-freeworld`
+```
+sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld
 ```
 </details>
 
