@@ -156,6 +156,9 @@ Tangram
 VS Codium
 Blanket
 Easyeffects
+Gradience
+Money
+Khronos
 ```
 
 ## Theming [Optional]
