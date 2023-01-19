@@ -147,6 +147,7 @@ Logseq
 Joplin
 Transmission
 yt-dlp
+darkman
 Celluloid
 Pika backup 
 Amberol
