@@ -186,5 +186,8 @@ Khronos
 ### Firefox Theme
 * Install Firefox Gnome theme by: `curl -s -o- https://raw.githubusercontent.com/rafaelmardojai/firefox-gnome-theme/master/scripts/install-by-curl.sh | bash`
 
+### Starship
+* Configure starship to make your terminal look good
+
 ### Grub Theme
 * https://github.com/vinceliuice/grub2-themes
