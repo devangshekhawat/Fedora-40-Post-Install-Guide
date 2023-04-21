@@ -92,8 +92,8 @@ sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld
 </details>
 
 ### OpenH264 for Firefox
-* ```sudo dnf config-manager --set-enabled fedora-cisco-openh264
-sudo dnf install -y gstreamer1-plugin-openh264 mozilla-openh264```
+* `sudo dnf config-manager --set-enabled fedora-cisco-openh264`
+* `sudo dnf install -y gstreamer1-plugin-openh264 mozilla-openh264`
 * After this enable the OpenH264 Plugin in Firefox's settings.
 
 ## Update Flatpak
