@@ -138,30 +138,46 @@ sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld
  `sudo dnf install -y unzip p7zip p7zip-plugins unrar`
 * These are Some Packages that I use and would recommend:
 ```
-Ferdium
-Books 
-Ulauncher 
-Blanket
-Krita
-Deja Dup Backups
-Blender
-Logseq
-Joplin
-Transmission
-yt-dlp
-darkman
-Celluloid
-Pika backup 
 Amberol
-News flash
-Foliate
-Tangram
-VS Codium
 Blanket
+Builder
+Brave 
+Blender
+Books 
+DaVinci Resolve
+Discord
+Discord RPC Maker
+Drawing
+Deja Dup Backups
+Endeavour 
 Easyeffects
+Extension Manager
+Flatseal
+Ferdium
+Foliate
+GIMP
+Gnome Tweaks
 Gradience
-Money
+Handbrake
+Iotas
+Joplin
 Khronos
+Krita
+Logseq
+Money
+Onlyoffice
+Pcloud
+Pika backup 
+Solanum
+Sound Recorder
+Tangram
+Transmission
+Tube Converter 
+Ulauncher
+Upscaler
+Video Trimmer
+VS Codium
+yt-dlp
 ```
 
 ## Theming [Optional]
