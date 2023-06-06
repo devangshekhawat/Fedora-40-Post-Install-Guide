@@ -11,7 +11,6 @@ installonly_limit=3
 clean_requirements_on_remove=True 
 best=False 
 skip_if_unavailable=True 
-fastestmirror=1
 max_parallel_downloads=10 
 deltarpm=true
 ``` 
@@ -37,21 +36,21 @@ sudo fwupdmgr update
 ```
 
 ## NVIDIA Drivers
-* Only follow this if you have a NVIDIA gpu. Also, don't follow this if you have a gpu which has dropped support for newer driver releases i.e. anything earlier than nvidia GT/GTX 600, 700, 800, 900, 1000, 1600 and RTX 2000, 3000 series. Fedora comes preinstalled with NOUVEAU drivers which may or may not work better on those older GPUs. This should be followed by Desktop and Laptop users alike.
+* Only follow this if you have a NVIDIA gpu. Also, don't follow this if you have a gpu which has dropped support for newer driver releases i.e. anything earlier than nvidia GT/GTX 600, 700, 800, 900, 1000, 1600 and RTX 2000, 3000, 4000 series. Fedora comes preinstalled with NOUVEAU drivers which may or may not work better on those remaining older GPUs. This should be followed by Desktop and Laptop users alike.
 * Disable Secure Boot.
 * `sudo dnf update` #To make sure you're on the latest kernel and then reboot.
-* Enable RPM Fusion Nvidia non-free repository in the app store and install from there,
+* Enable RPM Fusion Nvidia non-free repository in the app store and install it from there,
 * or alternatively
 * `sudo dnf install akmod-nvidia`
-* Install this if you use applications that use CUDA i.e. Davinci Resolve, Blender etc.
+* Install this if you use applications that can utilise CUDA i.e. Davinci Resolve, Blender etc.
 * `sudo dnf install xorg-x11-drv-nvidia-cuda`
 * Wait for atleast 5 mins before rebooting, to let the kermel module get built.
 * `modinfo -F version nvidia` #Check if the kernel module is built.
 * Reboot
 
 ## Battery Life
-* Follow this if you have a Laptop.
-* power-profiles-daemon works great on many systems but in case you're facing sub-optimal battery backup try installing tlp by:
+* Follow this if you have a Laptop and are facing sub optimal battery backup.
+* power-profiles-daemon which come pre-configured works great on a great majority of systems but still in case you're facing sub-optimal battery backup you try installing tlp by:
 * `sudo dnf install tlp tlp-rdw`
 * and mask power-profiles-daemon by:
 * `sudo systemctl mask power-profiles-daemon`
@@ -204,8 +203,8 @@ yt-dlp
 ### Firefox Theme
 * Install Firefox Gnome theme by: `curl -s -o- https://raw.githubusercontent.com/rafaelmardojai/firefox-gnome-theme/master/scripts/install-by-curl.sh | bash`
 
-### Starship
-* Configure starship to make your terminal look good
+### Starship (terminal theme)
+* Configure starship to make your terminal look good (refer https://starship.rs)
 
 ### Grub Theme
 * https://github.com/vinceliuice/grub2-themes
