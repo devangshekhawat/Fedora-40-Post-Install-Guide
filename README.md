@@ -118,8 +118,8 @@ sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld
 
 ## Gnome Extensions
 * Don't install these if you are using a different spin of Fedora.
-* Pop Shell - `sudo dnf install -y gnome-shell-extension-pop-shell xprop`
-* [GSconnect](https://extensions.gnome.org/extension/1319/gsconnect/) - do `sudo dnf install nautilus-python` for full support.
+* Pop Shell - run `sudo dnf install -y gnome-shell-extension-pop-shell xprop` to install it.
+* [GSconnect](https://extensions.gnome.org/extension/1319/gsconnect/) - run `sudo dnf install nautilus-python` for full support.
 * [Gesture Improvements](https://extensions.gnome.org/extension/4245/gesture-improvements/)
 * [User Themes](https://extensions.gnome.org/extension/19/user-themes/)
 * [Just Perfection](https://extensions.gnome.org/extension/3843/just-perfection/)
