@@ -112,11 +112,14 @@ sudo mkdir -p '/etc/systemd/resolved.conf.d' && sudo -e '/etc/systemd/resolved.c
 DNS=1.1.1.2#security.cloudflare-dns.com 1.0.0.2#security.cloudflare-dns.com 2606:4700:4700::1112#security.cloudflare-dns.com 2606:4700:4700::1002#security.cloudflare-dns.com
 DNSOverTLS=yes
 ```
+## Set UTC Time
+* Used to counter time inconsistencies in dual boot systems
+* `sudo timedatectl set-local-rtc '0'`
 
 ## Custom Kernel Parameters 
 * Allow you to squeeze out a little bit more performance from your system. Do not follow this if you share services and files through your network or are using fedora in a VM.
 * Install Grub Customizer to implement these tweaks by
-* `sudo dnf install grub-customizer` 
+* `sudo dnf install grub-customizer`
 
 ### Disable Mitigations 
 * Increases performance in multithreaded systems. The more cores you have in your cpu the greater the performance gain. Not advised for host systems on some networks for increased security vulnerabilities, using it on daily driver systems won't fetch any problems. 5-30% performance gain varying upon systems.
