@@ -1,4 +1,4 @@
-# Fedora 39 Post Install Guide
+ # Fedora 39 Post Install Guide
 Things to do after installing Fedora 39
 
 ## Faster Updates
@@ -62,8 +62,8 @@ sudo fwupdmgr update
 ## Media Codecs
 * Install these to get proper multimedia playback.
 ````
-sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
-sudo dnf groupupdate sound-and-video
+sudo dnf groupupdate 'core' 'multimedia' 'sound-and-video' --setop='install_weak_deps=False' --exclude='PackageKit-gstreamer-plugin' --allowerasing && sync
+sudo dnf swap 'ffmpeg-free' 'ffmpeg' --allowerasing
 sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel ffmpeg gstreamer-ffmpeg
 sudo dnf install lame\* --exclude=lame-devel
 sudo dnf group upgrade --with-optional Multimedia
@@ -93,7 +93,7 @@ sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld
 
 ### OpenH264 for Firefox
 * `sudo dnf config-manager --set-enabled fedora-cisco-openh264`
-* `sudo dnf install -y gstreamer1-plugin-openh264 mozilla-openh264`
+* `sudo dnf install -y openh264 gstreamer1-plugin-openh264 mozilla-openh264`
 * After this enable the OpenH264 Plugin in Firefox's settings.
 
 ## Update Flatpak
@@ -103,18 +103,36 @@ sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld
 ## Set Hostname
 * `hostnamectl set-hostname YOUR_HOSTNAME`
 
-## Speed Boost
+## Custom DNS Servers
+* For people that want to setup custom DNS servers for better privacy
+```
+sudo mkdir -p '/etc/systemd/resolved.conf.d' && sudo -e '/etc/systemd/resolved.conf.d/99-dns-over-tls.conf'
+
+[Resolve]
+DNS=1.1.1.2#security.cloudflare-dns.com 1.0.0.2#security.cloudflare-dns.com 2606:4700:4700::1112#security.cloudflare-dns.com 2606:4700:4700::1002#security.cloudflare-dns.com
+DNSOverTLS=yes
+```
+
+## Custom Kernel Parameters 
 * Allow you to squeeze out a little bit more performance from your system. Do not follow this if you share services and files through your network or are using fedora in a VM.
 * Install Grub Customizer to implement these tweaks by
 * `sudo dnf install grub-customizer` 
 
 ### Disable Mitigations 
-* Increases performance in multithreaded systems. The more core count you have the greater the performance gain. Not advised for host systems on some networks for increased security vulnerabilities, using it on daily driver systems won't fetch any problems. 5-30% performance gain varying upon systems.
+* Increases performance in multithreaded systems. The more cores you have in your cpu the greater the performance gain. Not advised for host systems on some networks for increased security vulnerabilities, using it on daily driver systems won't fetch any problems. 5-30% performance gain varying upon systems.
 * Add `mitigations=off` in Kernel Parameters under General Settings in Grub Customizer and click save.
 
 ### Zswap (for systems with <16 gigs of RAM)
 * Acts as virtual memory. Useful for sytems with <16 gigs of ram.
 * Add `zswap.enabled=1` in Kernel Parameters under General Settings in Grub Customizer and click save.
+
+### Modern Standby
+* Can result in better battery life when your laptop goes to sleep.
+* Add `mem_sleep_default=s2idle` in Kernel Parameters under General Settings in Grub Customizer and click save.
+
+### Enable nvidia-modeset 
+* Useful if you have a laptop with an Nvidia GPU. Necessary for some PRIME-related interoperability features.
+* Add `nvidia-drm.modeset=1` in Kernel Parameters under General Settings in Grub Customizer and click save.
 
 ## Gnome Extensions
 * Don't install these if you are using a different spin of Fedora.
@@ -143,10 +161,8 @@ Blanket
 Builder
 Brave 
 Blender
-Books 
 DaVinci Resolve
 Discord
-Discord RPC Maker
 Drawing
 Deja Dup Backups
 Endeavour 
@@ -164,7 +180,7 @@ Joplin
 Khronos
 Krita
 Logseq
-Money
+lm_sensors
 Onlyoffice
 Pcloud
 Pika backup 
