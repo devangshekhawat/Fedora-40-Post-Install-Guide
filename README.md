@@ -142,8 +142,11 @@ DNSOverTLS=yes
 * Pop Shell - run `sudo dnf install -y gnome-shell-extension-pop-shell xprop` to install it.
 * [GSconnect](https://extensions.gnome.org/extension/1319/gsconnect/) - run `sudo dnf install nautilus-python` for full support.
 * [Gesture Improvements](https://extensions.gnome.org/extension/4245/gesture-improvements/)
+* [Quick Settings Tweaker](https://github.com/qwreey75/quick-settings-tweaks)
 * [User Themes](https://extensions.gnome.org/extension/19/user-themes/)
+* [Compiz Windows Effect](https://extensions.gnome.org/extension/3210/compiz-windows-effect/)
 * [Just Perfection](https://extensions.gnome.org/extension/3843/just-perfection/)
+* [Rounded Windows Corners](https://extensions.gnome.org/extension/5237/rounded-window-corners/)
 * [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
 * [Quick Settings Tweaker](https://extensions.gnome.org/extension/5446/quick-settings-tweaker/)
 * [Blur My Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)
@@ -153,6 +156,9 @@ DNSOverTLS=yes
 * [Legacy (GTK3) Theme Scheme Auto Switcher](https://extensions.gnome.org/extension/4998/legacy-gtk3-theme-scheme-auto-switcher/)
 * [Caffeine](https://extensions.gnome.org/extension/517/caffeine/)
 * [Vitals](https://extensions.gnome.org/extension/1460/vitals/)
+* [Wireless HID](https://extensions.gnome.org/extension/4228/wireless-hid/)
+* [Logo Menu](https://extensions.gnome.org/extension/4451/logo-menu/)
+* [Space Bar](https://github.com/christopher-l/space-bar)
 
 ## Apps [Optional]
 * Packages for Rar and 7z compressed files support:
