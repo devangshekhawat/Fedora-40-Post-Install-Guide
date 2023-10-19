@@ -164,7 +164,6 @@ Blanket
 Builder
 Brave 
 Blender
-DaVinci Resolve
 Discord
 Drawing
 Deja Dup Backups
@@ -172,8 +171,8 @@ Endeavour
 Easyeffects
 Extension Manager
 Flatseal
-Ferdium
 Foliate
+Footage
 GIMP
 Gnome Tweaks
 Gradience
@@ -185,20 +184,23 @@ Krita
 Logseq
 lm_sensors
 Onlyoffice
+Parabolic
 Pcloud
+PDF Arranger
+Planify
 Pika backup 
+Snapshot
 Solanum
 Sound Recorder
 Tangram
 Transmission
-Tube Converter 
 Ulauncher
 Upscaler
 Video Trimmer
 VS Codium
 yt-dlp
 ```
-
+  
 ## Theming [Optional]
 
 ### GTK Themes
