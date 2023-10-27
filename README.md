@@ -24,6 +24,7 @@ deltarpm=true
 * `sudo dnf groupupdate core`
 
 ## Update 
+* `sudo dnf -y update`
 * `sudo dnf -y upgrade --refresh`
 * Reboot
 
