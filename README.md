@@ -118,6 +118,66 @@ sudo systemctl disable NetworkManager-wait-online.service
 sudo rm /etc/xdg/autostart/org.gnome.Software.desktop
 ```
 
+## Disable `dm-crypt` workqeues for SSD user to improve performance
+
+See this[^1] first
+
+[^1]: There are reported data loss on some and not on others, citing that the code of cloudflare (they implemented it) is buggy. I've tried it myself and so far I didn't experienced any data loss, and I didn't encountered complains about it yet from zen kernel users, since zen kernel disabled it by default. But again, it may not be always the case.
+
+Quoting [Arch Wiki](https://wiki.archlinux.org/title/Dm-crypt/Specialties#Disable_workqueue_for_increased_solid_state_drive_(SSD)_performance):
+
+> Solid state drive users should be aware that, by default, discarding internal read and write workqueue commands are not enabled by the device-mapper, i.e. block-devices are mounted without the no_read_workqueue and no_write_workqueue option unless you override the default. 
+
+> The no_read_workqueue and no_write_workqueue flags were introduced by [internal Cloudflare research Speeding up Linux disk encryption](https://blog.cloudflare.com/speeding-up-linux-disk-encryption/) made while investigating overall encryption performance. One of the conclusions is that internal dm-crypt read and write queues decrease performance for SSD drives. While queuing disk operations makes sense for spinning drives, bypassing the queue and writing data synchronously doubled the throughput and cut the SSD drives' IO await operations latency in half. The patches were upstreamed and are available since linux 5.9 and up [[5](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/drivers/md/dm-crypt.c?id=39d42fa96ba1b7d2544db3f8ed5da8fb0d5cb877)]. 
+
+To disable this in Fedora encrypted using `dm-crypt`, replace `discard` in `/etc/crypttab` with `no-read-workqueue,no-write-workqueue`, the output of `sudo cat /etc/crypttab` should look like this:
+
+```
+luks-<UUID> UUID=<UUID> none no-read-workqueue,no-write-workqueue
+```
+
+Where `<UUID>` should be unique to your system. Or by using `cryptsetup` which I recommend, Fedora uses LUKS2. Find the device with `lsblk -p`, the one with `/dev/mapper/luks-<UUID>` is the one encrypted, for example:
+
+```
+❯ lsblk -p
+NAME                MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINTS
+/dev/zram0          252:0    0   7.5G  0 disk  [SWAP]
+/dev/nvme0n1        259:0    0 476.9G  0 disk  
+├─/dev/nvme0n1p1    259:1    0   600M  0 part  /boot/efi
+├─/dev/nvme0n1p2    259:2    0     1G  0 part  /boot
+└─/dev/nvme0n1p3    259:3    0 475.4G  0 part  
+  └─/dev/mapper/luks-<UUID>
+                    253:0    0 475.3G  0 crypt /var/home
+...
+```
+
+In my case it is the `/dev/nvme0n1p3`. Then verify it with `sudo cryptsetup isLuks /dev/<DEV> && echo SUCCESS` where device is the device name, e.g. `nvme0n1p3`, if it echoed success then the device is LUKS. Then get the name of the encrypted device with:
+
+```
+sudo dmsetup info luks-<UUID>
+```
+
+Which should output something like this:
+
+```
+❯ sudo dmsetup info luks-e88105e1-690f-423e-a168-a9f9a2e613e9
+Name:              luks-e88105e1-690f-423e-a168-a9f9a2e613e9
+State:             ACTIVE
+Read Ahead:        256
+Tables present:    LIVE
+Open count:        1
+Event number:      0
+Major, minor:      253, 0
+Number of targets: 1
+UUID: CRYPT-LUKS2-e88105e1690f423ea168a9f9a2e613e9-luks-e88105e1-690f-423e-a168-a9f9a2e613e9
+```
+
+Take the name, in this case, `luks-e88105e1-690f-423e-a168-a9f9a2e613e9`, and execute the command:
+
+```
+sudo cryptsetup --perf-no_read_workqueue --perf-no_write_workqueue --persistent refresh <name>
+```
+
 ## Custom DNS Servers
 * For people that want to setup custom DNS servers for better privacy
 ```
