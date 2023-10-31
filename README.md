@@ -123,7 +123,8 @@ DNSOverTLS=yes
 * `sudo dnf install grub-customizer`
 
 ### Disable Mitigations 
-* Increases performance in multithreaded systems. The more cores you have in your cpu the greater the performance gain. Not advised for host systems on some networks for increased security vulnerabilities, using it on daily driver systems won't fetch any problems. 5-30% performance gain varying upon systems.
+* Increases performance in multithreaded systems. The more cores you have in your cpu the greater the performance gain. 5-30% performance gain varying upon systems.
+* Mitigations were added in Linux kernel as a workaround against security issues found in Intel CPUs, this caused drawback in performance particularly in old intel CPUs. However, modern intel CPUs (higher than 10th generations) do not gain noticeable performance improvements upon disabling of mitigations. Hence, disabling mitigations can present some security risks against various attacks, however, it still _might_ increase the CPU performance of your system.
 * Add `mitigations=off` in Kernel Parameters under General Settings in Grub Customizer and click save.
 
 ### Zswap (for systems with <16 gigs of RAM)
