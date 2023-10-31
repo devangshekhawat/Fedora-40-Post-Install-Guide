@@ -178,6 +178,18 @@ Take the name, in this case, `luks-e88105e1-690f-423e-a168-a9f9a2e613e9`, and ex
 sudo cryptsetup --perf-no_read_workqueue --perf-no_write_workqueue --persistent refresh <name>
 ```
 
+## Set suspend to deep sleep
+
+**Only if your laptop drains fast under `s2idle`**
+
+In some laptop, the battery drains rapidly when suspended under `s2idle`, particularly those with Alder Lake CPUs. To fix this, you can set the kernel parameters with `mem_sleep_default=deep`. To do this properly, use the command, `grubby`:
+
+```
+sudo grubby --update-kernel=ALL --args="mem_sleep_default=deep"
+```
+
+Do a reboot, then check it with `cat /sys/power/mem_sleep`, where the `deep` should be enclosed with brackets (`[deep]`).
+
 ## Custom DNS Servers
 * For people that want to setup custom DNS servers for better privacy
 ```
