@@ -104,6 +104,20 @@ sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld
 ## Set Hostname
 * `hostnamectl set-hostname YOUR_HOSTNAME`
 
+## Disable `NetworkManager-wait-online.service`
+* Disabling it can decrease the boot time of at least ~15s-20s:
+
+```
+sudo systemctl disable NetworkManager-wait-online.service
+```
+
+## Disable Gnome Software
+* Gnome software launches for some reason even tho it is not used, this takes at least 100MB of RAM upto 900MB (as reported anecdotically). You can remove from from the autostart in `/etc/xdg/autostart/org.gnome.Software.desktop`, by:
+
+```
+sudo rm /etc/xdg/autostart/org.gnome.Software.desktop
+```
+
 ## Custom DNS Servers
 * For people that want to setup custom DNS servers for better privacy
 ```
