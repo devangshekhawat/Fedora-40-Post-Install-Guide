@@ -128,6 +128,7 @@ DNSOverTLS=yes
 
 ### Zswap (for systems with <16 gigs of RAM)
 * Acts as virtual memory. Useful for sytems with <16 gigs of ram.
+* Since using zswap with zram can cause CPU drawbacks, it is advisable to turn off zram when enabling zswap this can be done by uninstalling zram with `sudo dnf uninstall zram-generator-defaults` and `sudo touch /etc/systemd/zram-generator.conf`.
 * Add `zswap.enabled=1` in Kernel Parameters under General Settings in Grub Customizer and click save.
 
 ### Modern Standby
