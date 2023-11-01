@@ -104,32 +104,6 @@ sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld
 ## Set Hostname
 * `hostnamectl set-hostname YOUR_HOSTNAME`
 
-## Disable `NetworkManager-wait-online.service`
-* Disabling it can decrease the boot time of at least ~15s-20s:
-
-```
-sudo systemctl disable NetworkManager-wait-online.service
-```
-
-## Disable Gnome Software
-* Gnome software launches for some reason even tho it is not used, this takes at least 100MB of RAM upto 900MB (as reported anecdotically). You can remove from from the autostart in `/etc/xdg/autostart/org.gnome.Software.desktop`, by:
-
-```
-sudo rm /etc/xdg/autostart/org.gnome.Software.desktop
-```
-
-## Set suspend to deep sleep
-
-**Only if your laptop drains fast under `s2idle`**
-
-In some laptop, the battery drains rapidly when suspended under `s2idle`, particularly those with Alder Lake CPUs. To fix this, you can set the kernel parameters with `mem_sleep_default=deep`. To do this properly, use the command, `grubby`:
-
-```
-sudo grubby --update-kernel=ALL --args="mem_sleep_default=deep"
-```
-
-Do a reboot, then check it with `cat /sys/power/mem_sleep`, where the `deep` should be enclosed with brackets (`[deep]`).
-
 ## Custom DNS Servers
 * For people that want to setup custom DNS servers for better privacy
 ```
@@ -143,7 +117,7 @@ DNSOverTLS=yes
 * Used to counter time inconsistencies in dual boot systems
 * `sudo timedatectl set-local-rtc '0'`
 
-## Custom Kernel Parameters 
+## Optimizations
 * Allow you to squeeze out a little bit more performance from your system. Do not follow this if you share services and files through your network or are using fedora in a VM.
 * Install Grub Customizer to implement these tweaks by
 * `sudo dnf install grub-customizer`
@@ -151,16 +125,24 @@ DNSOverTLS=yes
 ### Disable Mitigations 
 * Increases performance in multithreaded systems. The more cores you have in your cpu the greater the performance gain. 5-30% performance gain varying upon systems.
 * Mitigations were added in Linux kernel as a workaround against security issues found in Intel CPUs, this caused drawback in performance particularly in old intel CPUs. However, modern intel CPUs (higher than 10th generations) do not gain noticeable performance improvements upon disabling of mitigations. Hence, disabling mitigations can present some security risks against various attacks, however, it still _might_ increase the CPU performance of your system.
-* Add `mitigations=off` in Kernel Parameters under General Settings in Grub Customizer and click save.
+* `sudo grubby --update-kernel=ALL --args="mitigations=off"`
 
 ### Modern Standby
 * Can result in better battery life when your laptop goes to sleep.
-* Add `mem_sleep_default=s2idle` in Kernel Parameters under General Settings in Grub Customizer and click save.
+* `sudo grubby --update-kernel=ALL --args="mem_sleep_default=s2idle"`
 * If "s2idle" doesn't work for you i.e. people with alder lake CPUs, then you might want to refer to [this](https://www.reddit.com/r/linuxhardware/comments/ng166t/s3_deep_sleep_not_working/)
 
 ### Enable nvidia-modeset 
 * Useful if you have a laptop with an Nvidia GPU. Necessary for some PRIME-related interoperability features.
-* Add `nvidia-drm.modeset=1` in Kernel Parameters under General Settings in Grub Customizer and click save.
+* `sudo grubby --update-kernel=ALL --args="nvidia-drm.modeset=1"`
+
+## Disable `NetworkManager-wait-online.service`
+* Disabling it can decrease the boot time by at least ~15s-20s:
+* `sudo systemctl disable NetworkManager-wait-online.service`
+
+## Disable Gnome Software from Startup Apps
+* Gnome software launches for some reason even thought it is not required on every boot unless you want it to update your system in the background, this takes at least 100MB of RAM upto 900MB (as reported anecdotically). You can stop it from autostarting by:
+* `sudo rm /etc/xdg/autostart/org.gnome.Software.desktop`
 
 ## Gnome Extensions
 * Don't install these if you are using a different spin of Fedora.
