@@ -127,11 +127,6 @@ DNSOverTLS=yes
 * Mitigations were added in Linux kernel as a workaround against security issues found in Intel CPUs, this caused drawback in performance particularly in old intel CPUs. However, modern intel CPUs (higher than 10th generations) do not gain noticeable performance improvements upon disabling of mitigations. Hence, disabling mitigations can present some security risks against various attacks, however, it still _might_ increase the CPU performance of your system.
 * Add `mitigations=off` in Kernel Parameters under General Settings in Grub Customizer and click save.
 
-###  (Deprecated) ~~Zswap (for systems with <16 gigs of RAM)~~
-* ~~Acts as virtual memory. Useful for sytems with <16 gigs of ram.~~
-* ~~Since using zswap with zram can cause CPU drawbacks, it is advisable to turn off zram when enabling zswap this can be done by uninstalling zram with `sudo dnf uninstall zram-generator-defaults` and `sudo touch /etc/systemd/zram-generator.conf`.~~
-* ~~Add `zswap.enabled=1` in Kernel Parameters under General Settings in Grub Customizer and click save.~~
-
 ### Modern Standby
 * Can result in better battery life when your laptop goes to sleep.
 * Add `mem_sleep_default=s2idle` in Kernel Parameters under General Settings in Grub Customizer and click save.
