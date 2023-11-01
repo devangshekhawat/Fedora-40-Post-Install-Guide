@@ -126,10 +126,10 @@ DNSOverTLS=yes
 * Increases performance in multithreaded systems. The more cores you have in your cpu the greater the performance gain. Not advised for host systems on some networks for increased security vulnerabilities, using it on daily driver systems won't fetch any problems. 5-30% performance gain varying upon systems.
 * Add `mitigations=off` in Kernel Parameters under General Settings in Grub Customizer and click save.
 
-### Zswap (for systems with <16 gigs of RAM)
-* Acts as virtual memory. Useful for sytems with <16 gigs of ram.
-* Since using zswap with zram can cause CPU drawbacks, it is advisable to turn off zram when enabling zswap this can be done by uninstalling zram with `sudo dnf uninstall zram-generator-defaults` and `sudo touch /etc/systemd/zram-generator.conf`.
-* Add `zswap.enabled=1` in Kernel Parameters under General Settings in Grub Customizer and click save.
+###  (Deprecated) ~~Zswap (for systems with <16 gigs of RAM)~~
+* ~~Acts as virtual memory. Useful for sytems with <16 gigs of ram.~~
+* ~~Since using zswap with zram can cause CPU drawbacks, it is advisable to turn off zram when enabling zswap this can be done by uninstalling zram with `sudo dnf uninstall zram-generator-defaults` and `sudo touch /etc/systemd/zram-generator.conf`.~~
+* ~~Add `zswap.enabled=1` in Kernel Parameters under General Settings in Grub Customizer and click save.~~
 
 ### Modern Standby
 * Can result in better battery life when your laptop goes to sleep.
