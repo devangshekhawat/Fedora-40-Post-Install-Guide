@@ -118,13 +118,11 @@ DNSOverTLS=yes
 * `sudo timedatectl set-local-rtc '0'`
 
 ## Optimizations
-* Allow you to squeeze out a little bit more performance from your system. Do not follow this if you share services and files through your network or are using fedora in a VM.
-* Install Grub Customizer to implement these tweaks by
-* `sudo dnf install grub-customizer`
+* The tips below can allow you to squeeze out a little bit more performance from your system. 
 
 ### Disable Mitigations 
-* Increases performance in multithreaded systems. The more cores you have in your cpu the greater the performance gain. 5-30% performance gain varying upon systems.
-* Mitigations were added in Linux kernel as a workaround against security issues found in Intel CPUs, this caused drawback in performance particularly in old intel CPUs. However, modern intel CPUs (higher than 10th generations) do not gain noticeable performance improvements upon disabling of mitigations. Hence, disabling mitigations can present some security risks against various attacks, however, it still _might_ increase the CPU performance of your system.
+* Increases performance in multithreaded systems. The more cores you have in your cpu the greater the performance gain. 5-30% performance gain varying upon systems. Do not follow this if you share services and files through your network or are using fedora in a VM. 
+* Modern intel CPUs (above 10th gen) do not gain noticeable performance improvements upon disabling mitigations. Hence, disabling mitigations can present some security risks against various attacks, however, it still _might_ increase the CPU performance of your system.
 * `sudo grubby --update-kernel=ALL --args="mitigations=off"`
 
 ### Modern Standby
