@@ -195,6 +195,7 @@ Krita
 Logseq
 lm_sensors
 Onlyoffice
+Overskride
 Parabolic
 Pcloud
 PDF Arranger
