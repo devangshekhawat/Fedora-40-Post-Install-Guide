@@ -139,7 +139,7 @@ DNSOverTLS=yes
 * `sudo systemctl disable NetworkManager-wait-online.service`
 
 ### Disable Gnome Software from Startup Apps
-* Gnome software launches for some reason even thought it is not required on every boot unless you want it to update your system in the background, this takes at least 100MB of RAM upto 900MB (as reported anecdotically). You can stop it from autostarting by:
+* Gnome software autostarts on boot for some reason, even though it is not required on every boot unless you want it to do updates in the background, this takes at least 100MB of RAM upto 900MB (as reported anecdotically). You can stop it from autostarting by:
 * `sudo rm /etc/xdg/autostart/org.gnome.Software.desktop`
 
 ## Gnome Extensions
