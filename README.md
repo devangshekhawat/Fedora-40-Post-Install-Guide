@@ -79,8 +79,8 @@ sudo dnf group upgrade --with-optional Multimedia
 <details>
 <summary>Intel</summary>
  
-* If you have an intel chipset after installing the packages above., Do:
-* `sudo dnf install intel-media-driver`
+* If you have a recent Intel chipset (5th Gen and above) after installing the packages above., Do:
+* `sudo dnf swap libva-intel-media-driver intel-media-driver --allowerasing`
 </details>
 
 <details>
