@@ -17,11 +17,9 @@ deltarpm=true
 ``` 
 * Note: The `fastestmirror=1` plugin can be counterproductive at times, use it at your own discretion. Set it to `fastestmirror=0` if you are facing bad download speeds. Many users have reported better download speeds with the plugin enables so it is there by default.
 
-## RPM Fusion
-* If you forgot to enable third party repositories during the initial setup window, enable them by pasting the following into the terminal: 
-* `sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm`
-* also while you're at it, install app-stream metadata by
-* `sudo dnf groupupdate core`
+## Third Paty Software
+* Click on "Enable Third Party Repositories" during the intial setup prompt to get access to common software from RPMfusion and Flatpaks.
+* If you forgot to set it up intially, Go to the software app > Click on settings > Repositories.
 
 ## Update 
 * Go into the software center and click on update. Alternatively, you can use the following commands:
@@ -97,10 +95,6 @@ sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld
 * `sudo dnf config-manager --set-enabled fedora-cisco-openh264`
 * `sudo dnf install -y openh264 gstreamer1-plugin-openh264 mozilla-openh264`
 * After this enable the OpenH264 Plugin in Firefox's settings.
-
-## Update Flatpak
-* `flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo`
-* `flatpak update`
 
 ## Set Hostname
 * `hostnamectl set-hostname YOUR_HOSTNAME`
