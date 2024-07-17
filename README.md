@@ -65,10 +65,9 @@ sudo fwupdmgr update
 ## Media Codecs
 * Install these to get proper multimedia playback.
 ````
-sudo dnf groupupdate 'core' 'multimedia' 'sound-and-video' --setopt='install_weak_deps=False' --exclude='PackageKit-gstreamer-plugin' --allowerasing && sync
-sudo dnf swap 'ffmpeg-free' 'ffmpeg' --allowerasing
-sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel ffmpeg gstreamer-ffmpeg
-sudo dnf install lame\* --exclude=lame-devel
+sudo dnf swap 'ffmpeg-free' 'ffmpeg' --allowerasing # Switch to full FFMPEG.
+sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin # Installs. gstreamer components.
+sudo dnf update @sound-and-video # Installs useful Sound and Video complement packages.
 sudo dnf group upgrade --with-optional Multimedia
 ````
 
@@ -91,6 +90,7 @@ sudo dnf group upgrade --with-optional Multimedia
 * If you have an AMD chipset, after installing the packages above do:
 ```
 sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld
+sudo dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
 ```
 </details>
 
