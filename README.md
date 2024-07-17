@@ -33,7 +33,8 @@ deltarpm=true
 ## Firmware
 * If your system supports firmware update delivery through lvfs, update your device firmware by:
 ```
-sudo fwupdmgr refresh --force 
+sudo fwupdmgr refresh --force
+sudo fwupdmgr get-devices # Lists devices with available updates.
 sudo fwupdmgr get-updates # Fetches list of available updates.
 sudo fwupdmgr update
 ```
@@ -65,9 +66,9 @@ sudo fwupdmgr update
 * Install these to get proper multimedia playback.
 ````
 sudo dnf swap 'ffmpeg-free' 'ffmpeg' --allowerasing # Switch to full FFMPEG.
-sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin # Installs. gstreamer components.
+sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin # Installs gstreamer components. Required if you use Gnome Videos and other dependent applications.
 sudo dnf update @sound-and-video # Installs useful Sound and Video complement packages.
-sudo dnf group upgrade --with-optional Multimedia
+sudo dnf install Multimedia
 ````
 
 ## H/W Video Acceleration
