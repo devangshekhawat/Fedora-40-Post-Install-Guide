@@ -14,6 +14,7 @@ skip_if_unavailable=True
 fastestmirror=1 
 max_parallel_downloads=10 
 deltarpm=true
+defaultyes=True
 ``` 
 * Note: The `fastestmirror=1` plugin can be counterproductive at times, use it at your own discretion. Set it to `fastestmirror=0` if you are facing bad download speeds. Many users have reported better download speeds with the plugin enables so it is there by default.
 
