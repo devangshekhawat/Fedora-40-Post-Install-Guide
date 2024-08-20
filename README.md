@@ -22,7 +22,7 @@ deltarpm=true
 * If you forgot to enable third party repositories during the initial setup window, enable them by pasting the following into the terminal: 
 * `sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm`
 * also while you're at it, install app-stream metadata by
-* `sudo dnf groupupdate core`
+* `sudo dnf group update core`
 
 ## Update 
 * Go into the software center and click on update. Alternatively, you can use the following commands:
