@@ -53,15 +53,16 @@ sudo fwupdmgr update
 * `modinfo -F version nvidia` #Check if the kernel module is built.
 * Reboot
 
-## Battery Life
-* Follow this if you have a Laptop and are facing sub optimal battery backup.
-* power-profiles-daemon which come pre-configured works great on a great majority of systems but still in case you're facing sub-optimal battery backup you try installing tlp by:
-* `sudo dnf install tlp tlp-rdw`
-* and mask power-profiles-daemon by:
-* `sudo systemctl mask power-profiles-daemon`
-* Also install powertop by:
-* `sudo dnf install powertop`
-* `sudo powertop --auto-tune`
+## ~~Battery Life (Deprecated)~~
+* ~~Follow this if you have a Laptop and are facing sub optimal battery backup.~~
+* ~~power-profiles-daemon which come pre-configured on fedora works well on a great majority of systems but still in case you're facing sub-optimal battery backup you try installing tlp by:~~
+* ~~`sudo dnf install tlp tlp-rdw`~~
+* ~~and mask power-profiles-daemon by:~~
+* ~~`sudo systemctl mask power-profiles-daemon`~~
+* ~~Also install powertop by:~~
+* ~~`sudo dnf install powertop`~~
+* ~~`sudo powertop --auto-tune`~~
+Edit: Fedora comes preinstalled with PPD(power-profiles-daemon) which works well on its own now and all the aforementioned changes are now unnecessary. Just follow the hardware video acceleration section for better battery backup. 
 
 ## Media Codecs
 * Install these to get proper multimedia playback.
