@@ -62,7 +62,7 @@ sudo fwupdmgr update
 * ~~Also install powertop by:~~
 * ~~`sudo dnf install powertop`~~
 * ~~`sudo powertop --auto-tune`~~
-Edit: Fedora comes preinstalled with PPD(power-profiles-daemon) which works well on its own now and all the aforementioned changes are now unnecessary. Just follow the hardware video acceleration section for better battery backup. 
+* Edit: Fedora comes preinstalled with PPD(power-profiles-daemon) which works well on its own now and all the aforementioned changes are now unnecessary. Just follow the hardware video acceleration section for better battery backup. 
 
 ## Media Codecs
 * Install these to get proper multimedia playback.
