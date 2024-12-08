@@ -125,11 +125,6 @@ DNSOverTLS=yes
 * Modern intel CPUs (above 10th gen) do not gain noticeable performance improvements upon disabling mitigations. Hence, disabling mitigations can present some security risks against various attacks, however, it still _might_ increase the CPU performance of your system.
 * `sudo grubby --update-kernel=ALL --args="mitigations=off"`
 
-### Modern Standby
-* Can result in better battery life when your laptop goes to sleep.
-* `sudo grubby --update-kernel=ALL --args="mem_sleep_default=s2idle"`
-* If "s2idle" doesn't work for you i.e. people with alder lake CPUs, then you might want to refer to [this](https://www.reddit.com/r/linuxhardware/comments/ng166t/s3_deep_sleep_not_working/)
-
 ### Enable nvidia-modeset 
 * Useful if you have a laptop with an Nvidia GPU. Necessary for some PRIME-related interoperability features.
 * `sudo grubby --update-kernel=ALL --args="nvidia-drm.modeset=1"`
