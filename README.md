@@ -20,7 +20,7 @@ max_parallel_downloads=10
 * If you forgot to enable third party repositories during the initial setup window, enable them by pasting the following into the terminal: 
 * `sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm`
 * also while you're at it, install app-stream metadata by
-* `sudo dnf group update core`
+* `sudo dnf4 group upgrade core`
 
 ## Update 
 * Go into the software center and click on update. Alternatively, you can use the following commands:
@@ -49,7 +49,7 @@ sudo fwupdmgr update
 * `sudo dnf install akmod-nvidia`
 * Install this if you use applications that can utilise CUDA i.e. Davinci Resolve, Blender etc.
 * `sudo dnf install xorg-x11-drv-nvidia-cuda`
-* Wait for atleast 5 mins before rebooting, to let the kermel module get built.
+* Wait for atleast 5 mins before rebooting, to let the kernel module get built.
 * `modinfo -F version nvidia` #Check if the kernel module is built.
 * Reboot
 
@@ -68,7 +68,7 @@ sudo fwupdmgr update
 * Install these to get proper multimedia playback.
 ````
 sudo dnf swap 'ffmpeg-free' 'ffmpeg' --allowerasing # Switch to full FFMPEG.
-sudo dnf group install Multimedia
+sudo dnf4 group upgrade multimedia
 sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin # Installs gstreamer components. Required if you use Gnome Videos and other dependent applications.
 sudo dnf update @sound-and-video # Installs useful Sound and Video complement packages.
 ````
@@ -77,13 +77,14 @@ sudo dnf update @sound-and-video # Installs useful Sound and Video complement pa
 * Helps decrease load on the CPU when watching videos online by alloting the rendering to the dGPU/iGPU. Quite helpful in increasing battery backup on laptops.
 
 ### H/W Video Decoding with VA-API 
-* `sudo dnf install ffmpeg ffmpeg-libs libva libva-utils`
+* `sudo dnf install ffmpeg-libs libva libva-utils`
 
 <details>
 <summary>Intel</summary>
  
 * If you have a recent Intel chipset (5th Gen and above) after installing the packages above., Do:
 * `sudo dnf swap libva-intel-media-driver intel-media-driver --allowerasing`
+* `sudo dnf install libva-intel-driver`
 </details>
 
 <details>
@@ -97,8 +98,8 @@ sudo dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
 </details>
 
 ### OpenH264 for Firefox
-* `sudo dnf config-manager --set-enabled fedora-cisco-openh264`
 * `sudo dnf install -y openh264 gstreamer1-plugin-openh264 mozilla-openh264`
+* `sudo dnf config-manager --set-enabled fedora-cisco-openh264`
 * After this enable the OpenH264 Plugin in Firefox's settings.
 
 ## Set Hostname
