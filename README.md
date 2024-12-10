@@ -1,20 +1,6 @@
  # Fedora 41 Post Install Guide
 Things to do after installing Fedora 41
 
-~~~## Faster Updates (Deprecated)
-* `sudo nano /etc/dnf/dnf.conf` 
-* Copy and replace the text with the following:
-```
-[main] 
-gpgcheck=1 
-installonly_limit=3 
-clean_requirements_on_remove=True 
-best=False 
-skip_if_unavailable=True 
-max_parallel_downloads=10 
-``` 
-* Note: The `fastestmirror=1` and `deltarpm=true` arguments were removed. Avoid using these even if you find them in other guides. They are counterproductive at best.~~~
-
 ## RPM Fusion
 * Fedora has disabled the repositories for a lot of free and non-free .rpm packages by default. Follow this if you want to use non-free software like Steam, Discord and some multimedia codecs etc. As a general rule of thumb it is advised to do this to get access to many mainstream useful programs.
 * If you forgot to enable third party repositories during the initial setup window, enable them by pasting the following into the terminal: 
