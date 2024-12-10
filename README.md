@@ -25,9 +25,8 @@ max_parallel_downloads=10
   
 
 ## Update 
-* Go into the software center and click on update. Alternatively, you can use the following commands:
+* Go into the software center and click on update. Alternatively, you can do:
 * `sudo dnf -y update`
-* `sudo dnf -y upgrade --refresh`
 * Reboot
 
 ## Firmware
