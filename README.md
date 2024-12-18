@@ -56,8 +56,8 @@ sudo fwupdmgr update
 ````
 sudo dnf swap 'ffmpeg-free' 'ffmpeg' --allowerasing # Switch to full FFMPEG.
 sudo dnf4 group upgrade multimedia
-sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin # Installs gstreamer components. Required if you use Gnome Videos and other dependent applications.
-sudo dnf update @sound-and-video # Installs useful Sound and Video complement packages.
+sudo dnf upgrade @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin # Installs gstreamer components. Required if you use Gnome Videos and other dependent applications.
+sudo dnf -v group install 'Sound and Video' # Installs useful Sound and Video complement packages.
 ````
 
 ## H/W Video Acceleration
